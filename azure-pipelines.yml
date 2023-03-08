@@ -1,0 +1,78 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: 'InternshipApp.sln'
+  project: '**/WebApi.csproj'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+  productName: 'RochePMT'
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: UseDotNet@2 
+  displayName: 'Prepare .net 6.x'
+  inputs:
+    version: '6.x'
+    packageType: sdk
+
+- task: Assembly-Info-NetCore@2
+  inputs:
+    Path: '$(Build.SourcesDirectory)'
+    FileNames: '**/*csproj'
+    InsertAttributes: true
+    FileEncoding: 'auto'
+    WriteBOM: true
+    Authors: 'SMEDIX Inc'
+    Company: 'Smedix'
+    Product: '$(productName)'
+    Copyright: 'Copyright © Smedix'
+    VersionNumber: '$(buildVersion)'
+    FileVersionNumber: '$(buildVersion)'
+    PackageVersion: '$(buildVersion)'
+    LogLevel: 'verbose'
+    FailOnWarning: false
+    DisableTelemetry: false
+
+- script: 'dotnet build $(solution) --configuration $(buildConfiguration)'
+  displayName: Building $(solution)
+
+- task: VSTest@2
+  inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      **\WebApi.UnitTests.dll
+      !**\*TestAdapter.dll
+      !**\obj\**
+      !**/ref/**
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    codeCoverageEnabled: true
+    
+- task: DotNetCoreCLI@2
+  displayName: "Publish $(project)"
+  inputs:
+    command: 'publish'
+    projects: $(project)
+    publishWebProjects: false
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)/InternshipApp'
+    zipAfterPublish: true
+
+- task: PublishBuildArtifacts@1
+  displayName: "Upload InternshipApp WebRestApi Artifacts $(artifactName)"
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/InternshipApp' 
+    artifactName: $(artifactName)
+   
