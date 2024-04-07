@@ -6,8 +6,8 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace BusinessLogicLayer.Services
 {
-    public class DeviceReadingService : IDeviceReadingService
-    {
+    public class DeviceReadingService
+    { /*
         private readonly IDeviceReadingRepository _deviceReadingRepository;
         private IMemoryCache _memoryCache;
         private SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(1, 1);
@@ -85,5 +85,7 @@ namespace BusinessLogicLayer.Services
 
             return deviceReading;
         }
+
+        */
     }
 }

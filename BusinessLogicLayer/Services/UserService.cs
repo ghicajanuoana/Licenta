@@ -55,7 +55,11 @@ namespace BusinessLogicLayer.Services
             var user = new User
             {
                 Id = userDto.UserId,
+                FirstName = userDto.FirstName,
+                LastName = userDto.LastName,
+                Email = userDto.Email,
                 Username = userDto.Username,
+                Password = userDto.Password,
                 RoleId = userDto.RoleId,
                 IsActive = userDto.IsActive,
             };
@@ -68,9 +72,13 @@ namespace BusinessLogicLayer.Services
             return new UserDto()
             {
                 UserId = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
                 Username = user.Username,
-                RoleId = user.RoleId,
-                IsActive = user.IsActive
+                Password = user.Password,
+                //RoleId = user.RoleId,
+                //IsActive = user.IsActive
             };
         }
 
@@ -81,7 +89,7 @@ namespace BusinessLogicLayer.Services
                 UserId = user.Id,
                 Username = user.Username,
                 Role = ConvertRoleToDto(user.Role),
-                IsActive = user.IsActive
+                //IsActive = user.IsActive
             };
         }
 
@@ -120,7 +128,7 @@ namespace BusinessLogicLayer.Services
             {
                 UserId = user.Id,
                 Username = user.Username,
-                IsActive = user.IsActive,
+                //IsActive = user.IsActive,
                 Role = ConvertRoleToDto(user.Role)
             };
             return usersDto;
@@ -144,7 +152,22 @@ namespace BusinessLogicLayer.Services
                 return new PagedResponse<UserInListDto>(userDto, userParameters.PagingFilteringParameters.PageNumber,
                     users.PageSize, users.TotalCount);
             }
+
+        UserDto IUserService.ConvertUserToDto(User user)
+        {
+            return new UserDto()
+            {
+                UserId = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                Username = user.Username,
+                Password = user.Password,
+                //RoleId = user.RoleId,
+                //IsActive = user.IsActive
+            };
         }
+    }
     }
 
 

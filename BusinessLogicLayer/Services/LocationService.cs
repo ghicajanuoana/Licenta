@@ -15,12 +15,15 @@ namespace BusinessLogicLayer.Services
 
         private readonly IDeviceRepository _deviceRepository;
 
+        private readonly IUserService _userService;
+
         CommonStrings common = new CommonStrings();
 
-        public LocationService(ILocationRepository locationRepository, IDeviceRepository deviceRepository)
+        public LocationService(ILocationRepository locationRepository, IDeviceRepository deviceRepository, IUserService userService)
         {
             _locationRepository = locationRepository;
             _deviceRepository = deviceRepository;
+            _userService = userService;
         }
 
         public LocationDto ConvertLocationToDto(Location location)
@@ -35,6 +38,7 @@ namespace BusinessLogicLayer.Services
                 Country = location.Country,
                 EmailAlertsActive = location.EmailAlertsActive,
                 EmailRecipient = location.EmailRecipient,
+                //User = _userService.ConvertUserToDto(location.User), //ConvertUserToDto(location.User)
                 Latitude = location.Latitude,
                 Longitude = location.Longitude,
             };
@@ -51,6 +55,7 @@ namespace BusinessLogicLayer.Services
             location.Country = locationDto.Country;
             location.EmailAlertsActive = locationDto.EmailAlertsActive;
             location.EmailRecipient = locationDto.EmailRecipient;
+            //location.UserId = locationDto.User.UserId;
             location.Phone = locationDto.Phone;
             location.Latitude = locationDto.Latitude;
             location.Longitude = locationDto.Longitude;
@@ -71,6 +76,7 @@ namespace BusinessLogicLayer.Services
             return false;
         }
 
+        
         public async Task<LocationAddDto> GetLocationByIdAsync(int locationId)
         {
             var location = await _locationRepository.GetLocationByIdAsync(locationId);
@@ -97,6 +103,7 @@ namespace BusinessLogicLayer.Services
 
             return locationResponseDto;
         }
+        
 
         public async Task<IEnumerable<LocationInListDto>> GetAllLocationsAsync()
         {

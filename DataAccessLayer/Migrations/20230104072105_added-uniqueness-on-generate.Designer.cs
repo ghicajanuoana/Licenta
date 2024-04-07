@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
-    [DbContext(typeof(InternshipContext))]
+    [DbContext(typeof(DataContext))]
     [Migration("20230104072105_added-uniqueness-on-generate")]
     partial class addeduniquenessongenerate
     {

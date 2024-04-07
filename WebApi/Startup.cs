@@ -3,10 +3,15 @@ using BusinessLogicLayer.Services;
 using DataAccessLayer;
 using DataAccessLayer.Implementation;
 using DataAccessLayer.Interfaces;
+using DataAccessLayer.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using System.Text;
 using WebApi.Configuration;
 using WebApi.Controllers;
 using WebApi.Hubs;
@@ -31,11 +36,14 @@ namespace WebApi
             services.AddCors(o => o.AddPolicy("AllowAll", builder =>
             {
                 builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                services.AddSignalR();
             }));
 
             var sqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContextPool<InternshipContext>(options => options.UseSqlServer(sqlConnectionStr));
+            services.AddDbContextPool<DataContext>(options => options.UseSqlServer(sqlConnectionStr));
             services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+            //services.AddIdentityApiEndpoints<IdentityUser>().AddEntityFrameworkStores<InternshipContext>();
 
             services.AddScoped<IDeviceTypeService, DeviceTypeService>();
             services.AddScoped<ILocationService, LocationService>();
@@ -44,9 +52,10 @@ namespace WebApi
             services.AddScoped<IThresholdService, ThresholdService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IRoleService, RoleService>();
-            services.AddScoped<IDeviceReadingService, DeviceReadingService>();
+            //services.AddScoped<IDeviceReadingService, DeviceReadingService>();
             services.AddScoped<IDeviceMaintenanceService, DeviceMaintenanceService>();
             services.AddScoped<IExportToExcelService, ExportToExcelService>();
+
             services.AddTransient<IDeviceMaintenanceRepository, DeviceMaintenanceRepository>();
             services.AddTransient<IDeviceTypeRepository, DeviceTypeRepository>();
             services.AddTransient<ILocationRepository, LocationRepository>();
@@ -55,7 +64,7 @@ namespace WebApi
             services.AddTransient<IThresholdRepository, ThresholdRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IRoleRepository, RoleRepository>();
-            services.AddTransient<IDeviceReadingRepository,DeviceReadingRepository>();
+            //services.AddTransient<IDeviceReadingRepository,DeviceReadingRepository>();
             services.AddMemoryCache();
 
             services.AddSwaggerGen(c =>
@@ -94,7 +103,7 @@ namespace WebApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHub<AlertHub>("/hubs/alertCount");
+                endpoints.MapHub<AlertHub>("/alerts"); ///hubs/alertCount
             });
         }
 
@@ -104,7 +113,7 @@ namespace WebApi
                 .GetRequiredService<IServiceScopeFactory>()
                 .CreateScope())
             {
-                using (var context = serviceScope.ServiceProvider.GetService<InternshipContext>())
+                using (var context = serviceScope.ServiceProvider.GetService<DataContext>())
                 {
                     if (context.Database.ProviderName != "Microsoft.EntityFrameworkCore.InMemory")
                     {

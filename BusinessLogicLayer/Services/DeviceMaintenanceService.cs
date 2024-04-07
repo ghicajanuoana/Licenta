@@ -4,6 +4,7 @@ using BusinessLogicLayer.Interfaces;
 using Common;
 using DataAccessLayer.Enums;
 using DataAccessLayer.FilterModels;
+using DataAccessLayer.Implementation;
 using DataAccessLayer.Interfaces;
 using DataAccessLayer.Models;
 
@@ -24,13 +25,13 @@ namespace BusinessLogicLayer.Services
 
         public async Task<bool> AddDeviceMaintenanceAsync(MaintenanceAddDto maintenanceDto)
         {
-            if (_deviceMaintenanceRepository.IsDeviceUsed(maintenanceDto.DeviceId))
-            {
+            //if (_deviceMaintenanceRepository.IsDeviceUsed(maintenanceDto.DeviceId))
+            
                 var maintenance = ConvertDtoToMaintenance(maintenanceDto);
                 await _deviceMaintenanceRepository.AddDeviceMaintenanceAsync(maintenance);
                 return true;
-            }
-            return false;
+            
+            //return false;
         }
 
         public async Task DeleteDeviceMaintenanceByIdAsync(int deviceMaintenanceId)
@@ -143,6 +144,7 @@ namespace BusinessLogicLayer.Services
         private Maintenance ConvertDtoToMaintenance(MaintenanceAddDto maintenanceDto)
         {
             var maintenance = new Maintenance();
+            maintenance.Id = maintenanceDto.Id;
             maintenance.DeviceId = maintenanceDto.DeviceId;
             maintenance.ScheduledDate = maintenanceDto.ScheduledDate;
             maintenance.Description = maintenanceDto.Description;
@@ -168,6 +170,18 @@ namespace BusinessLogicLayer.Services
             };
 
             return maintenanceDto;
+        }
+
+        public async Task<IEnumerable<MaintenanceDto>> GetAllMaintenancesAsync()
+        {
+            var allMFromDb = await _deviceMaintenanceRepository.GetAllMaintenancesAsync();
+            var maintenanceDtos = new List<MaintenanceDto>();
+            foreach (var m in allMFromDb)
+            {
+                var maintenanceDto = ConvertMaintenanceToDto(m);
+                maintenanceDtos.Add(maintenanceDto);
+            }
+            return maintenanceDtos;
         }
     }
 }

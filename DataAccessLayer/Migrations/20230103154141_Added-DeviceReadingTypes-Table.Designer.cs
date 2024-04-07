@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
-    [DbContext(typeof(InternshipContext))]
+    [DbContext(typeof(DataContext))]
     [Migration("20230103154141_Added-DeviceReadingTypes-Table")]
     partial class AddedDeviceReadingTypesTable
     {

@@ -24,6 +24,7 @@ namespace BusinessLogicLayer.Services
             {
                 DeviceTypeId = deviceType.Id,
                 Name = deviceType.Name
+                //Unit = deviceType.Unit
             };
             return deviceDto;
         }
@@ -32,6 +33,7 @@ namespace BusinessLogicLayer.Services
         {
             var deviceType = dbDeviceType ?? new DeviceType();
             deviceType.Name = deviceTypeDto.Name;
+            //deviceType.Unit = deviceTypeDto.Unit;
 
             return deviceType;
         }
@@ -47,6 +49,7 @@ namespace BusinessLogicLayer.Services
                 {
                     DeviceTypeId = deviceType.Id,
                     Name = deviceType.Name
+                    //Unit = deviceType.Unit
                 };
 
                 deviceTypeDtos.Add(devideTypeDto);
@@ -67,6 +70,7 @@ namespace BusinessLogicLayer.Services
             {
                 DeviceTypeId = deviceType.Id,
                 Name = deviceType.Name
+                //Unit = deviceType.Unit
             };
 
             return deviceTypeDto;
@@ -78,15 +82,21 @@ namespace BusinessLogicLayer.Services
 
             if (isUnique)
             {
+                /*
                 var deviceType = new DeviceType
                 {
-                    Name = deviceTypeDto.Name
+                    Name = deviceTypeDto.Name,
+                    Unit = deviceTypeDto.Unit
                 };
+                */
+                var deviceType = ConvertDtoToDeviceType(deviceTypeDto);
 
                 await _deviceTypeRepository.AddDeviceTypeAsync(deviceType);
+                return true; //added this line
             }
 
-            return isUnique;
+            //return isUnique;
+            return false;
         }
 
         public async Task<ValidationResult> UpdateDeviceTypeAsync(DeviceTypeDto deviceTypeDto)

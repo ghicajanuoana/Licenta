@@ -7,6 +7,7 @@ namespace DataAccessLayer.Interfaces
     public interface IDeviceMaintenanceRepository
     {
         Task AddDeviceMaintenanceAsync(Maintenance maintenance);
+        Task<IEnumerable<Maintenance>> GetAllMaintenancesAsync();
         bool IsDeviceUsed(int deviceId);
         Task DeleteDeviceMaintenanceByIdAsync(int maintenanceId);
         Task<Maintenance> GetDeviceMaintenanceByIdAsync(int deviceMaintenanceId);

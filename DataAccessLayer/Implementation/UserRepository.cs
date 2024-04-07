@@ -7,34 +7,36 @@ namespace DataAccessLayer.Implementation
 {
     public class UserRepository : IUserRepository
     {
-        private readonly InternshipContext _internshipContext;
+        private readonly DataContext _dataContext;
 
-        public UserRepository(InternshipContext internshipContext)
+        public UserRepository(DataContext dataContext)
         {
-            _internshipContext = internshipContext;
+            _dataContext = dataContext;
         }
 
         public async Task AddUserAsync(User user)
         {
-            await _internshipContext.Users.AddAsync(user);
-            await _internshipContext.SaveChangesAsync();
+            await _dataContext.Users.AddAsync(user);
+            await _dataContext.SaveChangesAsync();
         }
 
         public bool IsUserNameUnique(int id, string name)
         {
-            return !_internshipContext.Users.Any(l => l.Id != id && l.Username == name);
+            return !_dataContext.Users.Any(l => l.Id != id && l.Username == name);
         }
 
         public async Task UpdateUserAsync(User user)
         {
-            _internshipContext.Users.Update(user);
-            await _internshipContext.SaveChangesAsync();
+            _dataContext.Users.Update(user);
+            await _dataContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<User>> GetAllUsersAsync()
         {
-            return await _internshipContext.Users
+            return await _dataContext.Users
                 .Include(d => d.Role)
+                //.Include(d => d.RefreshTokenExpiryTime)
+                //.Include(d => d.Token)
                 .ToListAsync();
         }
 
@@ -42,19 +44,19 @@ namespace DataAccessLayer.Implementation
         {
             var existingUser = await GetUserByIdAsync(userId);
 
-            _internshipContext.Users.Remove(existingUser);
-            await _internshipContext.SaveChangesAsync();
+            _dataContext.Users.Remove(existingUser);
+            await _dataContext.SaveChangesAsync();
         }
 
         public async Task<User> GetUserByIdAsync(int userId)
         {
-            return await _internshipContext.Users.Include(d => d.Role)
+            return await _dataContext.Users.Include(d => d.Role)
                 .FirstOrDefaultAsync(d => d.Id == userId);
         }
 
         public async Task<PagedResponse<User>> GetUsersFilteredPagedAsync(UserParameters userParameters)
         { 
-            var filteredUsers = _internshipContext.Users
+            var filteredUsers = _dataContext.Users
               .Include(d => d.Role)
               .Where(d => userParameters.Username == null || d.Username.Contains(userParameters.Username))
               .Where(d => userParameters.RoleId == null || d.Role.Id==(userParameters.RoleId))

@@ -6,11 +6,11 @@ namespace DataAccessLayer.Implementation
 {
     public class DeviceReadingTypeRepository : IDeviceReadingTypeRepository
     {
-        private readonly InternshipContext _internshipContext;
+        private readonly DataContext _dataContext;
 
-        public DeviceReadingTypeRepository(InternshipContext internshipContext)
+        public DeviceReadingTypeRepository(DataContext dataContext)
         {
-            this._internshipContext = internshipContext;
+            this._dataContext = dataContext;
         }
 
         public async Task AddDeviceReadingTypeAsync(DeviceReadingType deviceReadingType)
@@ -19,30 +19,30 @@ namespace DataAccessLayer.Implementation
             {
                 return;
             }
-            await _internshipContext.DeviceReadingTypes.AddAsync(deviceReadingType);
-            await _internshipContext.SaveChangesAsync();
+            await _dataContext.DeviceReadingTypes.AddAsync(deviceReadingType);
+            await _dataContext.SaveChangesAsync();
         }
 
         public async Task DeleteDeviceReadingTypeByIdAsync(int deviceReadingTypeId)
         {
             var existingDeviceReadingType = await GetDeviceReadingTypeByIdAsync(deviceReadingTypeId);
-            _internshipContext.DeviceReadingTypes.Remove(existingDeviceReadingType);
-            await _internshipContext.SaveChangesAsync();
+            _dataContext.DeviceReadingTypes.Remove(existingDeviceReadingType);
+            await _dataContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<DeviceReadingType>> GetAllDeviceReadingTypesAsync()
         {
-            return await _internshipContext.DeviceReadingTypes.OrderBy(d => d.Name).ToListAsync();
+            return await _dataContext.DeviceReadingTypes.OrderBy(d => d.Name).ToListAsync();
         }
 
         public bool IsDeviceReadingTypeNameUnique(int id, string name)
         {
-            return !_internshipContext.DeviceReadingTypes.Any(deviceReadingType => deviceReadingType.Id != id && deviceReadingType.Name == name);
+            return !_dataContext.DeviceReadingTypes.Any(deviceReadingType => deviceReadingType.Id != id && deviceReadingType.Name == name);
         }
 
         public async Task<DeviceReadingType> GetDeviceReadingTypeByIdAsync(int deviceReadingTypeId)
         {
-            var deviceReadingType = await _internshipContext.DeviceReadingTypes
+            var deviceReadingType = await _dataContext.DeviceReadingTypes
                 .FirstOrDefaultAsync(d => d.Id == deviceReadingTypeId);
 
             return deviceReadingType;
@@ -55,8 +55,8 @@ namespace DataAccessLayer.Implementation
             if (existingDeviceReadingType != null)
             {
                 existingDeviceReadingType.Name = deviceReadingType.Name;
-                existingDeviceReadingType.Unit = deviceReadingType.Unit;
-                await _internshipContext.SaveChangesAsync();
+                
+                await _dataContext.SaveChangesAsync();
             }
             else
             {
@@ -66,7 +66,7 @@ namespace DataAccessLayer.Implementation
 
         public async Task<bool> DeviceReadingTypeIdExistsAsync(int deviceReadingTypeId)
         {
-            return await _internshipContext.DeviceReadingTypes.AnyAsync(d => d.Id == deviceReadingTypeId);
+            return await _dataContext.DeviceReadingTypes.AnyAsync(d => d.Id == deviceReadingTypeId);
         }
     }
 }

@@ -1,0 +1,70 @@
+2023-11-30 16:25:03.505 +02:00 [DBG] Connection id "0HMVGRKMHF5J8" accepted.
+2023-11-30 16:25:03.599 +02:00 [DBG] Connection id "0HMVGRKMHF5J8" started.
+2023-11-30 16:25:03.601 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5275/hubs/alertCount - -
+2023-11-30 16:25:03.604 +02:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2023-11-30 16:25:03.605 +02:00 [INF] CORS policy execution successful.
+2023-11-30 16:25:03.618 +02:00 [DBG] The request path  does not match the path filter
+2023-11-30 16:25:03.619 +02:00 [DBG] The request path /hubs/alertCount does not match a supported file type
+2023-11-30 16:25:03.654 +02:00 [DBG] 1 candidate(s) found for the request path '/hubs/alertCount'
+2023-11-30 16:25:03.654 +02:00 [DBG] Request matched endpoint '/hubs/alertCount'
+2023-11-30 16:25:03.655 +02:00 [INF] Executing endpoint '/hubs/alertCount'
+2023-11-30 16:25:03.655 +02:00 [DBG] New connection l80bvZ4Ossj9o6Z2YLizpw created.
+2023-11-30 16:25:03.655 +02:00 [DBG] Establishing new connection.
+2023-11-30 16:25:03.663 +02:00 [DBG] Socket opened using Sub-Protocol: 'null'.
+2023-11-30 16:25:03.699 +02:00 [DBG] OnConnectedAsync started.
+2023-11-30 16:25:07.071 +02:00 [DBG] Found protocol implementation for requested protocol: json.
+2023-11-30 16:25:07.074 +02:00 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2023-11-30 16:25:44.863 +02:00 [DBG] Connection id "0HMVGRKMHF5J8" received FIN.
+2023-11-30 16:25:44.864 +02:00 [DBG] Connection id "0HMVGRKMHF5J8" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-11-30 16:25:44.864 +02:00 [DBG] Connection id "0HMVGRKMHF5J8" disconnecting.
+2023-11-30 16:25:44.867 +02:00 [DBG] Socket connection closed prematurely.
+System.Net.WebSockets.WebSocketException (0x80004005): The remote party closed the WebSocket connection without completing the close handshake.
+   at System.Net.WebSockets.ManagedWebSocket.ThrowIfEOFUnexpected(Boolean throwOnPrematureClosure)
+   at System.Net.WebSockets.ManagedWebSocket.EnsureBufferContainsAsync(Int32 minimumRequiredBytes, CancellationToken cancellationToken, Boolean throwOnPrematureClosure)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.WebSockets.ManagedWebSocket.ReceiveAsyncPrivate[TResult](Memory`1 payloadBuffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Http.Connections.Internal.Transports.WebSocketsServerTransport.StartReceiving(WebSocket socket)
+2023-11-30 16:25:44.869 +02:00 [DBG] Waiting for the application to finish sending data.
+2023-11-30 16:25:44.871 +02:00 [DBG] Socket closed.
+2023-11-30 16:25:44.872 +02:00 [DBG] OnConnectedAsync ending.
+2023-11-30 16:25:44.872 +02:00 [DBG] Removing connection l80bvZ4Ossj9o6Z2YLizpw from the list of connections.
+2023-11-30 16:25:44.873 +02:00 [INF] Executed endpoint '/hubs/alertCount'
+2023-11-30 16:25:44.873 +02:00 [INF] HTTP GET /hubs/alertCount responded 101 in 41218.5754 ms
+2023-11-30 16:25:44.873 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5275/hubs/alertCount - - - 101 - - 41272.7347ms
+2023-11-30 16:25:44.875 +02:00 [DBG] Connection id "0HMVGRKMHF5J8" stopped.
+2023-11-30 16:26:32.491 +02:00 [DBG] Connection id "0HMVGRKMHF5J9" accepted.
+2023-11-30 16:26:32.539 +02:00 [DBG] Connection id "0HMVGRKMHF5J9" started.
+2023-11-30 16:26:32.559 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5275/hubs/alertCount - -
+2023-11-30 16:26:32.560 +02:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2023-11-30 16:26:32.560 +02:00 [INF] CORS policy execution successful.
+2023-11-30 16:26:32.560 +02:00 [DBG] The request path  does not match the path filter
+2023-11-30 16:26:32.560 +02:00 [DBG] The request path /hubs/alertCount does not match a supported file type
+2023-11-30 16:26:32.560 +02:00 [DBG] 1 candidate(s) found for the request path '/hubs/alertCount'
+2023-11-30 16:26:32.560 +02:00 [DBG] Request matched endpoint '/hubs/alertCount'
+2023-11-30 16:26:32.560 +02:00 [INF] Executing endpoint '/hubs/alertCount'
+2023-11-30 16:26:32.561 +02:00 [DBG] New connection Vy40wHfp8KDu95zrDXEm-w created.
+2023-11-30 16:26:32.561 +02:00 [DBG] Establishing new connection.
+2023-11-30 16:26:32.567 +02:00 [DBG] Socket opened using Sub-Protocol: 'null'.
+2023-11-30 16:26:32.576 +02:00 [DBG] OnConnectedAsync started.
+2023-11-30 16:26:32.743 +02:00 [DBG] Found protocol implementation for requested protocol: json.
+2023-11-30 16:26:32.746 +02:00 [DBG] Completed connection handshake. Using HubProtocol 'json'.
+2023-11-30 18:09:46.771 +02:00 [DBG] Connection id "0HMVGRKMHF5J9" received FIN.
+2023-11-30 18:09:46.774 +02:00 [DBG] Connection id "0HMVGRKMHF5J9" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-11-30 18:09:46.776 +02:00 [DBG] Connection id "0HMVGRKMHF5J9" disconnecting.
+2023-11-30 18:09:46.790 +02:00 [DBG] Socket connection closed prematurely.
+System.Net.WebSockets.WebSocketException (0x80004005): The remote party closed the WebSocket connection without completing the close handshake.
+   at System.Net.WebSockets.ManagedWebSocket.ThrowIfEOFUnexpected(Boolean throwOnPrematureClosure)
+   at System.Net.WebSockets.ManagedWebSocket.EnsureBufferContainsAsync(Int32 minimumRequiredBytes, CancellationToken cancellationToken, Boolean throwOnPrematureClosure)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.WebSockets.ManagedWebSocket.ReceiveAsyncPrivate[TResult](Memory`1 payloadBuffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Http.Connections.Internal.Transports.WebSocketsServerTransport.StartReceiving(WebSocket socket)
+2023-11-30 18:09:46.795 +02:00 [DBG] Waiting for the application to finish sending data.
+2023-11-30 18:09:46.795 +02:00 [DBG] Socket closed.
+2023-11-30 18:09:46.799 +02:00 [DBG] OnConnectedAsync ending.
+2023-11-30 18:09:46.802 +02:00 [DBG] Removing connection Vy40wHfp8KDu95zrDXEm-w from the list of connections.
+2023-11-30 18:09:46.802 +02:00 [INF] Executed endpoint '/hubs/alertCount'
+2023-11-30 18:09:46.802 +02:00 [INF] HTTP GET /hubs/alertCount responded 101 in 6194241.8939 ms
+2023-11-30 18:09:46.809 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5275/hubs/alertCount - - - 101 - - 6194249.5239ms
+2023-11-30 18:09:46.810 +02:00 [DBG] Connection id "0HMVGRKMHF5J9" stopped.

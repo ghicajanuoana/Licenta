@@ -99,7 +99,7 @@ namespace WebApi.Controllers
                 return BadRequest(ex);
             }
         }
-
+        /*
         [HttpGet]
         [Route("{locationId}")]
         public async Task<IActionResult> GetLocationByIdAsync(int locationId)
@@ -129,6 +129,7 @@ namespace WebApi.Controllers
                 return BadRequest(ex);
             }
         }
+        */
 
         [HttpGet]
         [Route("getAllLocations")]

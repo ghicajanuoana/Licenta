@@ -8,6 +8,7 @@ using BusinessLogicLayer.Enums;
 using ValidationResult = BusinessLogicLayer.Enums.ValidationResult;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Logging;
+using BusinessLogicLayer.Services;
 
 namespace WebApi.Controllers
 {
@@ -27,8 +28,8 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
-        [Route("Add")]
-        public async Task<IActionResult> AddDeviceMaintenance([FromBody] MaintenanceAddDto maintenance)
+        [Route("AddMaintenance")]
+        public async Task<IActionResult> AddDeviceMaintenance([FromBody] MaintenanceAddDto maintenance) //[FromBody]
         {
             if (maintenance == null)
             {
@@ -152,6 +153,25 @@ namespace WebApi.Controllers
                 }
 
                 return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest(ex);
+            }
+        }
+
+
+        [HttpGet]
+        [Route("getAllMaintenances")]
+        public async Task<IActionResult> GetAllMaintenancesAsync()
+        {
+            try
+            {
+                _logger.LogInformation($"GetAllDevices");
+                var deviceDtos = await _deviceMaintenanceService.GetAllMaintenancesAsync();
+
+                return Ok(deviceDtos);
             }
             catch (Exception ex)
             {

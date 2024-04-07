@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
-    [DbContext(typeof(InternshipContext))]
+    [DbContext(typeof(DataContext))]
     [Migration("20221222112754_make-latitude-and-longitude-nullable")]
     partial class makelatitudeandlongitudenullable
     {

@@ -9,6 +9,7 @@ namespace BusinessLogicLayer.Interfaces
     public interface IDeviceMaintenanceService
     {
         Task<bool> AddDeviceMaintenanceAsync(MaintenanceAddDto maintenanceDto);
+        Task<IEnumerable<MaintenanceDto>> GetAllMaintenancesAsync();
         Task DeleteDeviceMaintenanceByIdAsync(int deviceMaintenanceId);
         Task<MaintenanceDto> GetDeviceMaintenanceByIdAsync(int deviceMaintenanceId);
         Task<ValidationResult> UpdateDeviceMaintenanceAsync(MaintenanceUpdateDto maintenanceDto);

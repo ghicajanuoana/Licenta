@@ -14,6 +14,10 @@
 
         public string? EmailRecipient { get; set; }
 
+        //public int UserId { get; set; }
+
+        //public User User { get; set; }
+
         public string? ContactEmail { get; set; }
 
         public string Address { get; set; }

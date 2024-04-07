@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
-    [DbContext(typeof(InternshipContext))]
+    [DbContext(typeof(DataContext))]
     [Migration("20230118110242_added-field-for-alerts-read-state")]
     partial class addedfieldforalertsreadstate
     {

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
-    [DbContext(typeof(InternshipContext))]
+    [DbContext(typeof(DataContext))]
     partial class InternshipContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -77,41 +77,6 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("Devices");
                 });
 
-            modelBuilder.Entity("DataAccessLayer.Models.DeviceReading", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("AlertType")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DeviceId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DeviceReadingTypeId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsAlertRead")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("ReceivedTs")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal>("ValueRead")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DeviceId");
-
-                    b.HasIndex("DeviceReadingTypeId");
-
-                    b.ToTable("DeviceReadings");
-                });
-
             modelBuilder.Entity("DataAccessLayer.Models.DeviceReadingType", b =>
                 {
                     b.Property<int>("Id")
@@ -123,10 +88,6 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Unit")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -265,7 +226,7 @@ namespace DataAccessLayer.Migrations
                         new
                         {
                             Id = 2,
-                            RoleType = "Agent"
+                            RoleType = "User"
                         },
                         new
                         {
@@ -315,6 +276,36 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("Thresholds");
                 });
 
+            modelBuilder.Entity("DataAccessLayer.Models.Todo", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("CompletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsCompleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Todos");
+                });
+
             modelBuilder.Entity("DataAccessLayer.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -323,16 +314,36 @@ namespace DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<bool>("IsActive")
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("IsActive")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(true);
 
-                    b.Property<int>("RoleId")
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RefreshToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RefreshTokenExpiryTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("RoleId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Token")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Username")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -340,7 +351,8 @@ namespace DataAccessLayer.Migrations
                     b.HasIndex("RoleId");
 
                     b.HasIndex("Username")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[Username] IS NOT NULL");
 
                     b.ToTable("Users");
                 });
@@ -362,25 +374,6 @@ namespace DataAccessLayer.Migrations
                     b.Navigation("DeviceType");
 
                     b.Navigation("Location");
-                });
-
-            modelBuilder.Entity("DataAccessLayer.Models.DeviceReading", b =>
-                {
-                    b.HasOne("DataAccessLayer.Models.Device", "Device")
-                        .WithMany()
-                        .HasForeignKey("DeviceId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("DataAccessLayer.Models.DeviceReadingType", "DeviceReadingType")
-                        .WithMany()
-                        .HasForeignKey("DeviceReadingTypeId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("Device");
-
-                    b.Navigation("DeviceReadingType");
                 });
 
             modelBuilder.Entity("DataAccessLayer.Models.Maintenance", b =>
@@ -418,8 +411,7 @@ namespace DataAccessLayer.Migrations
                     b.HasOne("DataAccessLayer.Models.Role", "Role")
                         .WithMany("Users")
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Role");
                 });

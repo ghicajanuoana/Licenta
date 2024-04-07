@@ -1,0 +1,137 @@
+2023-12-15 09:43:39.132 +02:00 [INF] Application starting up
+2023-12-15 09:43:40.072 +02:00 [DBG] Hosting starting
+2023-12-15 09:43:40.508 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-12-15 09:43:41.271 +02:00 [DBG] The index {'DeviceTypeId'} was not created on entity type 'Threshold' as the properties are already covered by the index {'DeviceTypeId', 'DeviceReadingTypeId'}.
+2023-12-15 09:43:41.536 +02:00 [WRN] The 'bool' property 'IsActive' on entity type 'User' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-12-15 09:43:41.545 +02:00 [WRN] No store type was specified for the decimal property 'ValueRead' on entity type 'DeviceReading'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-12-15 09:43:41.545 +02:00 [WRN] No store type was specified for the decimal property 'CriticalValue' on entity type 'Threshold'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-12-15 09:43:41.545 +02:00 [WRN] No store type was specified for the decimal property 'MaxValue' on entity type 'Threshold'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-12-15 09:43:41.545 +02:00 [WRN] No store type was specified for the decimal property 'MinValue' on entity type 'Threshold'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-12-15 09:43:41.545 +02:00 [WRN] No store type was specified for the decimal property 'WarningValue' on entity type 'Threshold'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-12-15 09:43:41.761 +02:00 [DBG] Entity Framework Core 7.0.1 initialized 'InternshipContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.0' with options: MaxPoolSize=1024 
+2023-12-15 09:43:41.769 +02:00 [DBG] Creating DbConnection.
+2023-12-15 09:43:41.776 +02:00 [DBG] Created DbConnection. (3ms).
+2023-12-15 09:43:41.778 +02:00 [DBG] Migrating using database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:41.789 +02:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:42.860 +02:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:42.876 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-12-15 09:43:42.882 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (8ms).
+2023-12-15 09:43:42.885 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (15ms).
+2023-12-15 09:43:42.893 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-12-15 09:43:42.949 +02:00 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-12-15 09:43:42.954 +02:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:42.965 +02:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (7ms).
+2023-12-15 09:43:42.971 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-12-15 09:43:42.971 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2023-12-15 09:43:42.971 +02:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2023-12-15 09:43:42.971 +02:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:42.972 +02:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:42.973 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-12-15 09:43:43.005 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-12-15 09:43:43.005 +02:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:43.006 +02:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (0ms).
+2023-12-15 09:43:43.007 +02:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:43.007 +02:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:43.007 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2023-12-15 09:43:43.007 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2023-12-15 09:43:43.007 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2023-12-15 09:43:43.007 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-12-15 09:43:43.008 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-12-15 09:43:43.008 +02:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:43.008 +02:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (0ms).
+2023-12-15 09:43:43.008 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-12-15 09:43:43.008 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2023-12-15 09:43:43.008 +02:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2023-12-15 09:43:43.008 +02:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:43.008 +02:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:43.008 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-12-15 09:43:43.009 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-12-15 09:43:43.009 +02:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:43.009 +02:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (0ms).
+2023-12-15 09:43:43.031 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-12-15 09:43:43.031 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2023-12-15 09:43:43.031 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2023-12-15 09:43:43.031 +02:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:43.031 +02:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:43.032 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-12-15 09:43:43.036 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-12-15 09:43:43.041 +02:00 [DBG] Closing data reader to 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:43.043 +02:00 [DBG] A data reader for 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' is being disposed after spending 4ms reading results.
+2023-12-15 09:43:43.043 +02:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2023-12-15 09:43:43.043 +02:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (0ms).
+2023-12-15 09:43:43.072 +02:00 [INF] No migrations were applied. The database is already up to date.
+2023-12-15 09:43:43.227 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-12-15 09:43:43.430 +02:00 [DBG] Registered SignalR Protocol: json, implemented by Microsoft.AspNetCore.SignalR.Protocol.JsonHubProtocol.
+2023-12-15 09:43:43.602 +02:00 [DBG] Using development certificate: CN=localhost (Thumbprint: DB1EB5FD6F2B27194A16DA81B062CAE4A8D8A2A8)
+2023-12-15 09:43:43.707 +02:00 [INF] Now listening on: https://localhost:7137
+2023-12-15 09:43:43.707 +02:00 [INF] Now listening on: http://localhost:5275
+2023-12-15 09:43:43.707 +02:00 [DBG] Loaded hosting startup assembly WebApi
+2023-12-15 09:43:43.707 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-12-15 09:43:43.707 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-12-15 09:43:43.711 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-12-15 09:43:43.712 +02:00 [INF] Hosting environment: Development
+2023-12-15 09:43:43.712 +02:00 [INF] Content root path: C:\Users\ghica\OneDrive\Desktop\Git Smedix Aplicatie\Aplicatie\WebApi
+2023-12-15 09:43:43.712 +02:00 [DBG] Hosting started
+2023-12-15 09:43:43.829 +02:00 [DBG] Connection id "0HMVT8684BQ7B" accepted.
+2023-12-15 09:43:43.830 +02:00 [DBG] Connection id "0HMVT8684BQ7B" started.
+2023-12-15 09:43:43.894 +02:00 [DBG] Connection id "0HMVT8684BQ7C" accepted.
+2023-12-15 09:43:43.894 +02:00 [DBG] Connection id "0HMVT8684BQ7C" started.
+2023-12-15 09:43:44.505 +02:00 [DBG] Connection id "0HMVT8684BQ7D" accepted.
+2023-12-15 09:43:44.505 +02:00 [DBG] Connection id "0HMVT8684BQ7D" started.
+2023-12-15 09:43:44.523 +02:00 [DBG] Connection id "0HMVT8684BQ7E" accepted.
+2023-12-15 09:43:44.524 +02:00 [DBG] Connection id "0HMVT8684BQ7E" started.
+2023-12-15 09:43:44.651 +02:00 [DBG] Connection id "0HMVT8684BQ7D" received FIN.
+2023-12-15 09:43:44.685 +02:00 [DBG] Connection 0HMVT8684BQ7E established using the following protocol: "Tls12"
+2023-12-15 09:43:44.685 +02:00 [DBG] Connection 0HMVT8684BQ7D established using the following protocol: "Tls12"
+2023-12-15 09:43:44.705 +02:00 [DBG] Connection id "0HMVT8684BQ7D" is closed. The last processed stream ID was 0.
+2023-12-15 09:43:44.705 +02:00 [DBG] Connection id "0HMVT8684BQ7D" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-12-15 09:43:44.720 +02:00 [DBG] Connection id "0HMVT8684BQ7D" stopped.
+2023-12-15 09:43:44.763 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger - -
+2023-12-15 09:43:44.810 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-12-15 09:43:44.853 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger - - - 301 0 - 93.2284ms
+2023-12-15 09:43:44.855 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/index.html - -
+2023-12-15 09:43:45.166 +02:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2023-12-15 09:43:45.400 +02:00 [DBG] Response markup was updated to include browser refresh script injection.
+2023-12-15 09:43:45.402 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/index.html - - - 200 - text/html;charset=utf-8 546.6475ms
+2023-12-15 09:43:45.403 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/swagger-ui-bundle.js - -
+2023-12-15 09:43:45.403 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7137/_vs/browserLink - -
+2023-12-15 09:43:45.404 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/swagger-ui.css - -
+2023-12-15 09:43:45.404 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7137/_framework/aspnetcore-browser-refresh.js - -
+2023-12-15 09:43:45.404 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/swagger-ui-standalone-preset.js - -
+2023-12-15 09:43:45.453 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7137/_framework/aspnetcore-browser-refresh.js - - - 200 12344 application/javascript;+charset=utf-8 48.9537ms
+2023-12-15 09:43:45.501 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-12-15 09:43:45.501 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-12-15 09:43:45.503 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/swagger-ui.css - - - 200 143632 text/css 99.8218ms
+2023-12-15 09:43:45.503 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 99.3698ms
+2023-12-15 09:43:45.511 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-12-15 09:43:45.511 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 108.2734ms
+2023-12-15 09:43:45.529 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7137/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 125.6052ms
+2023-12-15 09:43:45.673 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/v1/swagger.json - -
+2023-12-15 09:43:45.688 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/favicon-32x32.png - -
+2023-12-15 09:43:45.688 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-12-15 09:43:45.689 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/favicon-32x32.png - - - 200 628 image/png 0.8447ms
+2023-12-15 09:43:45.886 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 213.0239ms
+2023-12-15 09:43:48.162 +02:00 [DBG] Connection id "0HMVT8684BQ7E" received FIN.
+2023-12-15 09:43:48.162 +02:00 [DBG] Connection id "0HMVT8684BQ7E" is closed. The last processed stream ID was 17.
+2023-12-15 09:43:48.163 +02:00 [DBG] Connection id "0HMVT8684BQ7E" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-12-15 09:43:48.164 +02:00 [DBG] Connection id "0HMVT8684BQ7E" stopped.
+2023-12-15 09:43:53.845 +02:00 [DBG] Authentication of the HTTPS connection timed out.
+2023-12-15 09:43:53.845 +02:00 [DBG] Connection id "0HMVT8684BQ7B" stopped.
+2023-12-15 09:43:53.845 +02:00 [DBG] Connection id "0HMVT8684BQ7B" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-12-15 09:43:53.903 +02:00 [DBG] Authentication of the HTTPS connection timed out.
+2023-12-15 09:43:53.903 +02:00 [DBG] Connection id "0HMVT8684BQ7C" stopped.
+2023-12-15 09:43:53.903 +02:00 [DBG] Connection id "0HMVT8684BQ7C" sending FIN because: "The Socket transport's send loop completed gracefully."

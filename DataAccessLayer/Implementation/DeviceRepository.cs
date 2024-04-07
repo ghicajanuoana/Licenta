@@ -7,16 +7,16 @@ namespace DataAccessLayer.Implementation
 {
     public class DeviceRepository : IDeviceRepository
     {
-        private readonly InternshipContext _internshipContext;
+        private readonly DataContext _dataContext;
 
-        public DeviceRepository(InternshipContext internshipContext)
+        public DeviceRepository(DataContext dataContext)
         {
-            this._internshipContext = internshipContext;
+            this._dataContext = dataContext;
         }
 
         public async Task<IEnumerable<Device>> GetAllDevicesAsync()
         {
-            var devices = await _internshipContext.Devices
+            var devices = await _dataContext.Devices
                 .Include(d => d.Location)
                 .Include(d => d.DeviceType)
                 .ToListAsync();
@@ -25,7 +25,7 @@ namespace DataAccessLayer.Implementation
 
         public async Task<IEnumerable<Device>> GetAllDevicesByLocationIdAsync(int locationId)
         {
-            var devices = await _internshipContext.Devices
+            var devices = await _dataContext.Devices
                 .Include(d => d.Location)
                 .Include(d => d.DeviceType)
                 .Where(d => d.LocationId == locationId)
@@ -35,19 +35,19 @@ namespace DataAccessLayer.Implementation
 
         public async Task AddDeviceAsync(Device newDevice)
         {
-            await _internshipContext.Devices.AddAsync(newDevice);
-            await _internshipContext.SaveChangesAsync();
+            await _dataContext.Devices.AddAsync(newDevice);
+            await _dataContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Device>> GetDevicesByNameAsync(string deviceName)
         {
-            var devices = await _internshipContext.Devices.Where(d => d.Name.Equals(deviceName)).ToListAsync();
+            var devices = await _dataContext.Devices.Where(d => d.Name.Equals(deviceName)).ToListAsync();
             return devices;
         }
 
         public bool IsDeviceTypeUsed(int deviceTypeId)
         {
-            bool isDeviceTypeInUse = _internshipContext.Devices.Any(d => d.DeviceTypeId == deviceTypeId);
+            bool isDeviceTypeInUse = _dataContext.Devices.Any(d => d.DeviceTypeId == deviceTypeId);
             return !isDeviceTypeInUse;
         }
 
@@ -55,13 +55,13 @@ namespace DataAccessLayer.Implementation
         {
             var existingDevice = await GetDeviceByIdAsync(deviceId);
 
-            _internshipContext.Devices.Remove(existingDevice);
-            await _internshipContext.SaveChangesAsync();
+            _dataContext.Devices.Remove(existingDevice);
+            await _dataContext.SaveChangesAsync();
         }
 
         public async Task<Device> GetDeviceByIdAsync(int deviceId)
         {
-            var device = await _internshipContext.Devices
+            var device = await _dataContext.Devices
                 .Include(d => d.Location)
                 .Include(d => d.DeviceType)
                 .FirstOrDefaultAsync(d => d.DeviceId == deviceId);
@@ -71,18 +71,18 @@ namespace DataAccessLayer.Implementation
 
         public bool IsLocationUsed(int locationId)
         {
-            return _internshipContext.Devices.Any(l => l.LocationId == locationId);
+            return _dataContext.Devices.Any(l => l.LocationId == locationId);
         }
 
         public async Task UpdateDeviceAsync(Device device)
         {
-            _internshipContext.Devices.Update(device);
-            await _internshipContext.SaveChangesAsync();
+            _dataContext.Devices.Update(device);
+            await _dataContext.SaveChangesAsync();
         }
 
         public async Task<PagedResponse<Device>> GetDevicesFilteredPagedAsync(PagingFilteringParameters pagingFilteringParameters, Device device)
         {
-            var filteredDevices = _internshipContext.Devices
+            var filteredDevices = _dataContext.Devices
               .Include(d => d.Location)
               .Include(d => d.DeviceType)
               .Where(d => device.Name == null || d.Name.Contains(device.Name))

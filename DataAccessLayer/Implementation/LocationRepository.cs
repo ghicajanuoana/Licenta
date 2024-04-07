@@ -8,11 +8,11 @@ namespace DataAccessLayer.Implementation
 {
     public class LocationRepository : ILocationRepository
     {
-        private readonly InternshipContext _internshipContext;
+        private readonly DataContext _dataContext;
 
-        public LocationRepository(InternshipContext internshipContext)
+        public LocationRepository(DataContext dataContext)
         {
-            _internshipContext = internshipContext;
+            _dataContext = dataContext;
         }
         public async Task AddLocationAsync(Location location)
         {
@@ -20,18 +20,18 @@ namespace DataAccessLayer.Implementation
             {
                 return;
             }
-            await _internshipContext.Locations.AddAsync(location);
-            await _internshipContext.SaveChangesAsync();
+            await _dataContext.Locations.AddAsync(location);
+            await _dataContext.SaveChangesAsync();
         }
 
         public bool IsLocationNameUnique(int id, string name)
         {
-            return !_internshipContext.Locations.Any(x => x.LocationId != id && x.Name == name);
+            return !_dataContext.Locations.Any(x => x.LocationId != id && x.Name == name);
         }
 
         public async Task<Location> GetLocationByIdAsync(int locationId)
         {
-            var location = await _internshipContext.Locations
+            var location = await _dataContext.Locations
                 .Where(l => l.LocationId == locationId)
                 .FirstOrDefaultAsync();
 
@@ -44,13 +44,13 @@ namespace DataAccessLayer.Implementation
             {
                 throw new ArgumentNullException(nameof(location));
             }
-            _internshipContext.Locations.Update(location);
-            await _internshipContext.SaveChangesAsync();
+            _dataContext.Locations.Update(location);
+            await _dataContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Location>> GetAllLocationsAsync()
         {
-            var locations = await _internshipContext.Locations.ToListAsync();
+            var locations = await _dataContext.Locations.ToListAsync();
 
             return locations;
         }
@@ -61,14 +61,14 @@ namespace DataAccessLayer.Implementation
 
             if (locationToDelete != null)
             {
-                _internshipContext.Locations.Remove(locationToDelete);
-                await _internshipContext.SaveChangesAsync();
+                _dataContext.Locations.Remove(locationToDelete);
+                await _dataContext.SaveChangesAsync();
             }
         }
 
         public async Task<PagedResponse<Location>> GetLocationsFilteredPagedAsync(PagingFilteringParameters pagingFilteringParameters, Location location)
         {
-            var filteredLocations = _internshipContext.Locations
+            var filteredLocations = _dataContext.Locations
               .Where(l => location.Address == null || l.Address.Contains(location.Address))
               .Where(l => location.Name == null || l.Name.Contains(location.Name))
               .Where(l => location.ContactEmail == null || l.ContactEmail.Contains(location.ContactEmail))

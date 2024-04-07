@@ -120,7 +120,7 @@ namespace WebApi.Controllers
 
         [HttpPost]
         [Route("AddDevice")]
-        public async Task<IActionResult> AddDevice([FromForm] DeviceDtoAdd device)
+        public async Task<IActionResult> AddDevice([FromForm] DeviceDtoAdd device) 
         {
             if (device == null)
             {

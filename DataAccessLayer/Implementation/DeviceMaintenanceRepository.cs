@@ -9,27 +9,27 @@ namespace DataAccessLayer.Implementation
 {
     public class DeviceMaintenanceRepository : IDeviceMaintenanceRepository
     {
-        private readonly InternshipContext _internshipContext;
+        private readonly DataContext _dataContext;
 
-        public DeviceMaintenanceRepository(InternshipContext internshipContext)
+        public DeviceMaintenanceRepository(DataContext dataContext)
         {
-            _internshipContext = internshipContext;
+            _dataContext = dataContext;
         }
 
         public async Task AddDeviceMaintenanceAsync(Maintenance maintenance)
         {
-            await _internshipContext.Maintenances.AddAsync(maintenance);
-            await _internshipContext.SaveChangesAsync();
+            await _dataContext.Maintenances.AddAsync(maintenance);
+            await _dataContext.SaveChangesAsync();
         }
 
         public bool IsDeviceUsed(int deviceId)
         {
-            return !_internshipContext.Maintenances.Any(d => d.DeviceId == deviceId);
+            return !_dataContext.Maintenances.Any(d => d.DeviceId == deviceId);
         }
 
         public async Task<IEnumerable<Maintenance>> GetDeviceMaintenanceOrderedAndFilteredAsync(MaintenanceFilter maintenanceFilter)
         {
-            return await _internshipContext.Maintenances.Include(m => m.Device)
+            return await _dataContext.Maintenances.Include(m => m.Device)
                 .Where(m => maintenanceFilter.Device == null || m.Device.Name.Contains(maintenanceFilter.Device))
                 .Where(m => maintenanceFilter.Description == null || m.Description.Contains(maintenanceFilter.Description))
                 .Where(m => maintenanceFilter.Outcome == null || m.Outcome.Contains(maintenanceFilter.Outcome))
@@ -45,21 +45,29 @@ namespace DataAccessLayer.Implementation
         {
             var existingDeviceMaintenance = await GetDeviceMaintenanceByIdAsync(maintenanceId);
 
-            _internshipContext.Maintenances.Remove(existingDeviceMaintenance);
-            await _internshipContext.SaveChangesAsync();
+            _dataContext.Maintenances.Remove(existingDeviceMaintenance);
+            await _dataContext.SaveChangesAsync();
         }
 
         public async Task<Maintenance> GetDeviceMaintenanceByIdAsync(int deviceMaintenanceId)
         {   
-            return await _internshipContext.Maintenances.Include(m=>m.Device)
+            return await _dataContext.Maintenances.Include(m=>m.Device)
                 .FirstOrDefaultAsync(m => m.Id == deviceMaintenanceId);
 
         }
 
         public async Task UpdateDeviceMaintenanceAsync(Maintenance maintenance)
         { 
-            _internshipContext.Maintenances.Update(maintenance);
-            await _internshipContext.SaveChangesAsync();
+            _dataContext.Maintenances.Update(maintenance);
+            await _dataContext.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Maintenance>> GetAllMaintenancesAsync()
+        {
+            var maint = await _dataContext.Maintenances
+                .Include(d => d.Device)
+                .ToListAsync();
+            return maint;
         }
     }
 }

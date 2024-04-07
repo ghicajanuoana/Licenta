@@ -82,6 +82,7 @@ namespace BusinessLogicLayer.Services
             {
                 var device = new Device();
                 device = ConvertDtoAddToDevice(newDevice, device);
+                //device = ConvertDtoAddToDevice(newDevice);
                 await _deviceRepository.AddDeviceAsync(device);
                 return true;
             }
@@ -203,7 +204,7 @@ namespace BusinessLogicLayer.Services
                     DeviceType = d.DeviceType.Name,
                     Location = d.Location.Name,
                     SerialNumber = d.SerialNumber,
-                    ImageBytes = ConvertBytesToString64(d.ImageBytes)
+                    //ImageBytes = ConvertBytesToString64(d.ImageBytes)
                 };
                 deviceDtos.Add(deviceDto);
             }
@@ -272,6 +273,7 @@ namespace BusinessLogicLayer.Services
             device.Emails = deviceDto.Emails;
             device.SoftwareVersion = deviceDto.SoftwareVersion;
             device.FirmwareVersion = deviceDto.FirmwareVersion;
+            
             if (deviceDto.ImageFile != null)
             {
                 device.ImageBytes = ConvertFileToBytes(deviceDto.ImageFile);
@@ -280,6 +282,7 @@ namespace BusinessLogicLayer.Services
             {
                 device.ImageBytes = null;
             }
+            
 
             return device;
         }
@@ -294,7 +297,7 @@ namespace BusinessLogicLayer.Services
                 Description = device.Description,
                 Location = _locationService.ConvertLocationToDto(device.Location),
                 DeviceType = _deviceTypeService.ConvertDeviceTypeToDto(device.DeviceType),
-                ImageBytes = ConvertBytesToString64(device.ImageBytes)
+                //ImageBytes = ConvertBytesToString64(device.ImageBytes)
             };
             return deviceDto;
         }

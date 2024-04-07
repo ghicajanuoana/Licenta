@@ -2,6 +2,7 @@
 {
     public class DeviceReading
     {
+        /*
         public int Id { get; set; }
 
         public DateTime ReceivedTs { get; set; }
@@ -19,5 +20,6 @@
         public bool IsAlertRead { get; set; }
 
         public int? AlertType { get; set; }
+        */
     }
 }

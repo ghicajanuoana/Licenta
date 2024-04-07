@@ -4,6 +4,7 @@ namespace BusinessLogicLayer.DTOs
 {
     public class DeviceReadingDto
     {
+        /*
         public int Id { get; set; }
 
         public DateTime ReceivedTs { get; set; }
@@ -13,6 +14,8 @@ namespace BusinessLogicLayer.DTOs
         public decimal ValueRead { get; set; }
 
         public string DeviceReadingTypeName { get; set; }
+
+        */
 
     }
 }

@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{ACE9CB4C-F2DC-4F7C-A172-2063F06799E3}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.UnitTests", "UnitTests\WebApi.UnitTests\WebApi.UnitTests.csproj", "{A3380C48-ED7C-47EF-8428-924BC8901F29}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{6084CBDB-FE04-46AD-92CB-1BDE67D9E5B6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{07412013-467D-481E-811A-1876915EA848}"
@@ -26,10 +22,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A3380C48-ED7C-47EF-8428-924BC8901F29}.Debug|Any CPU.ActiveCfg = Release|Any CPU
-		{A3380C48-ED7C-47EF-8428-924BC8901F29}.Debug|Any CPU.Build.0 = Release|Any CPU
-		{A3380C48-ED7C-47EF-8428-924BC8901F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3380C48-ED7C-47EF-8428-924BC8901F29}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6084CBDB-FE04-46AD-92CB-1BDE67D9E5B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6084CBDB-FE04-46AD-92CB-1BDE67D9E5B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6084CBDB-FE04-46AD-92CB-1BDE67D9E5B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -53,9 +45,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{A3380C48-ED7C-47EF-8428-924BC8901F29} = {ACE9CB4C-F2DC-4F7C-A172-2063F06799E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FED4A27D-DC40-4149-8D9D-04CB0F72D05C}

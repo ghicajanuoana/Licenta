@@ -81,7 +81,7 @@ namespace BusinessLogicLayer.Services
         {
             DeviceReadingType deviceReadingType = dbDeviceReadingType ?? new DeviceReadingType();
             deviceReadingType.Name = deviceReadingTypeDto.Name;
-            deviceReadingType.Unit = deviceReadingTypeDto.Unit;
+            
             return deviceReadingType;
         }
 
@@ -90,7 +90,7 @@ namespace BusinessLogicLayer.Services
             DeviceReadingTypeDto deviceReadingTypeDto = new DeviceReadingTypeDto();
             deviceReadingTypeDto.DeviceReadingTypeId = deviceReadingType.Id;
             deviceReadingTypeDto.Name = deviceReadingType.Name;
-            deviceReadingTypeDto.Unit = deviceReadingType.Unit;
+            
             return deviceReadingTypeDto;
         }
     }

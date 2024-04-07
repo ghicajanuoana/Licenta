@@ -4,8 +4,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Implementation
 {
-    public class DeviceReadingRepository : IDeviceReadingRepository
-    {
+    public class DeviceReadingRepository
+    { /*
         private readonly InternshipContext _internshipContext;
 
         public DeviceReadingRepository(InternshipContext internshipContext)
@@ -51,5 +51,6 @@ namespace DataAccessLayer.Implementation
 
             return unreadAlerts;
         }
+        */
     }
 }

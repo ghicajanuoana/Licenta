@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
-    [DbContext(typeof(InternshipContext))]
+    [DbContext(typeof(DataContext))]
     [Migration("20230119121559_added-alertType-field-in-DeviceReading-table")]
     partial class addedalertTypefieldinDeviceReadingtable
     {

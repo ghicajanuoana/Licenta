@@ -7,18 +7,18 @@ namespace WebApi.Hubs
 {
     public class AlertHub : Hub
     {
+        /*
         private readonly IDeviceReadingService _deviceReadingService;
 
         public AlertHub(IDeviceReadingService deviceReadingService)
         {
             _deviceReadingService = deviceReadingService;
         }
+        */
 
-        public async Task GetUnreadAlertCount()
+        public async Task SendMessage(string user, string message)
         {
-            var unreadAlertCount = await _deviceReadingService.GetUnreadAlertsCountAsync();
-
-            await Clients.All.SendAsync("ReceiveUnreadAlertCount", unreadAlertCount);
+            await Clients.All.SendAsync("ReceiveMessage", user, message);
         }
     }
 }

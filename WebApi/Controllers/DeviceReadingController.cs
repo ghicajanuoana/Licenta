@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using WebApi.Hubs;
 
 namespace WebApi.Controllers
-{
+{ /*
     [ApiController]
     [Route("api/[controller]")]
     public class DeviceReadingController : ControllerBase
@@ -87,4 +87,6 @@ namespace WebApi.Controllers
             }
         }
     }
+
+    */
 }

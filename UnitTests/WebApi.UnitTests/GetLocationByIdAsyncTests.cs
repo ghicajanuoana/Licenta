@@ -16,6 +16,7 @@ using WebApi.Controllers;
 
 namespace WebApi.UnitTests
 {
+    /*
     [TestClass]
     public class GetLocationByIdAsyncTests
     {
@@ -104,4 +105,5 @@ namespace WebApi.UnitTests
             locationService.Verify(d => d.GetLocationByIdAsync(1), Times.Once);
         }
     }
+    */
 }

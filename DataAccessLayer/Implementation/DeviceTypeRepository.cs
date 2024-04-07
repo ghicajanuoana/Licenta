@@ -6,27 +6,32 @@ namespace DataAccessLayer.Implementation
 {
     public class DeviceTypeRepository : IDeviceTypeRepository
     {
-        public readonly InternshipContext internshipContext;
+        public readonly DataContext dataContext;
 
-        public DeviceTypeRepository(InternshipContext internshipContext)
+        public DeviceTypeRepository(DataContext dataContext)
         {
-            this.internshipContext = internshipContext;
+            this.dataContext = dataContext;
         }
 
         public async Task AddDeviceTypeAsync(DeviceType deviceType)
         {
-            await internshipContext.DeviceTypes.AddAsync(deviceType);
-            await internshipContext.SaveChangesAsync();
+            if (deviceType == null)
+            {
+                return;
+            }
+
+            await dataContext.DeviceTypes.AddAsync(deviceType);
+            await dataContext.SaveChangesAsync();
         }
 
         public async Task<bool> ValidateUniqueNameAsync(string deviceName)
         {
-            return await internshipContext.DeviceTypes.AnyAsync(d => d.Name == deviceName) ? false : true;
+            return await dataContext.DeviceTypes.AnyAsync(d => d.Name == deviceName) ? false : true;
         }
 
         public async Task<bool> DeviceTypeIdExistsAsync(int deviceTypeId)
         {
-            return await internshipContext.DeviceTypes.AnyAsync(d => d.Id == deviceTypeId);
+            return await dataContext.DeviceTypes.AnyAsync(d => d.Id == deviceTypeId);
         }
 
         public async Task UpdateDeviceTypeAsync(DeviceType deviceType)
@@ -34,26 +39,27 @@ namespace DataAccessLayer.Implementation
             var existingDeviceTypeInDb = await GetDeviceTypeByIdAsync(deviceType.Id);
 
             existingDeviceTypeInDb.Name = deviceType.Name;
+            //existingDeviceTypeInDb.Unit = deviceType.Unit;
 
-            await internshipContext.SaveChangesAsync();
+            await dataContext.SaveChangesAsync();
         }
 
         public async Task DeleteDeviceTypeByIdAsync(int deviceTypeId)
         {
             var existingDeviceTypeInDb = await GetDeviceTypeByIdAsync(deviceTypeId);
 
-            internshipContext.DeviceTypes.Remove(existingDeviceTypeInDb);
-            await internshipContext.SaveChangesAsync();
+            dataContext.DeviceTypes.Remove(existingDeviceTypeInDb);
+            await dataContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<DeviceType>> GetAllDeviceTypesAsync()
         {
-            return await internshipContext.DeviceTypes.OrderBy(d => d.Name).ToListAsync();
+            return await dataContext.DeviceTypes.OrderBy(d => d.Name).ToListAsync();
         }
 
         public async Task<DeviceType> GetDeviceTypeByNameAsync(string deviceName)
         {
-            var deviceType = await internshipContext.DeviceTypes
+            var deviceType = await dataContext.DeviceTypes
                 .Where(d => d.Name.Equals(deviceName))
                 .FirstOrDefaultAsync();
 
@@ -62,7 +68,7 @@ namespace DataAccessLayer.Implementation
 
         public async Task<DeviceType> GetDeviceTypeByIdAsync(int deviceTypeId)
         {
-            var deviceType = await internshipContext.DeviceTypes
+            var deviceType = await dataContext.DeviceTypes
                 .Where(d => d.Id == deviceTypeId)
                 .FirstOrDefaultAsync();
 

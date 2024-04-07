@@ -6,26 +6,26 @@ namespace DataAccessLayer.Implementation
 {
     public class RoleRepository : IRoleRepository
     {
-        private readonly InternshipContext _internshipContext;
+        private readonly DataContext _dataContext;
 
-        public RoleRepository(InternshipContext internshipContext)
+        public RoleRepository(DataContext dataContext)
         {
-            _internshipContext = internshipContext;
+            _dataContext = dataContext;
         }
 
         public async Task<bool> DeviceTypeIdExistsAsync(int roleId)
         {
-            return await _internshipContext.Roles.AnyAsync(r => r.Id == roleId);
+            return await _dataContext.Roles.AnyAsync(r => r.Id == roleId);
         }
 
         public async Task<IEnumerable<Role>> GetAllRolesAsync()
         {
-            return await _internshipContext.Roles.ToListAsync();
+            return await _dataContext.Roles.ToListAsync();
         }
 
         public async Task<Role> GetRoleByType(string roleType)
         {
-            return await _internshipContext.Roles
+            return await _dataContext.Roles
                 .Where(r => r.RoleType.Equals(roleType))
                 .FirstOrDefaultAsync();
         }
