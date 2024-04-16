@@ -194,5 +194,13 @@ namespace BusinessLogicLayer.Services
             return new PagedResponse<LocationInListDto>(locationDtos, locations.PageNumber,
                 locations.PageSize, locations.TotalCount);
         }
+
+        public async Task CheckLocationIsUsedAsync(int locationId)
+        {
+            if (!_deviceRepository.IsLocationUsed(locationId))
+            {
+                throw new Exception(common.UsedLocation);
+            }
+        }
     }
 }

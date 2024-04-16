@@ -71,7 +71,7 @@ namespace DataAccessLayer.Implementation
 
         public bool IsLocationUsed(int locationId)
         {
-            return _dataContext.Devices.Any(l => l.LocationId == locationId);
+            return !_dataContext.Devices.Any(l => l.LocationId == locationId);
         }
 
         public async Task UpdateDeviceAsync(Device device)

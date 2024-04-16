@@ -15,5 +15,6 @@ namespace BusinessLogicLayer.Interfaces
         Task DeleteLocationByIdAsync(int locationId);
         Task<PagedResponse<LocationInListDto>> GetLocationsFilteredPagedAsync(LocationParameters locationParameters);
         LocationDto ConvertLocationToDto(Location location);
+        Task CheckLocationIsUsedAsync(int locationId);
     }
 }

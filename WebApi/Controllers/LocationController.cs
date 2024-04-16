@@ -1,6 +1,7 @@
 ﻿using BusinessLogicLayer.DTOs;
 using BusinessLogicLayer.Enums;
 using BusinessLogicLayer.Interfaces;
+using BusinessLogicLayer.Services;
 using DataAccessLayer.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -195,5 +196,30 @@ namespace WebApi.Controllers
                 return BadRequest(ex);
             }
         }
+
+
+        [HttpGet("checkLocation/{locationId}")]
+        public async Task<IActionResult> CheckLocationIsUsedAsync(int locationId)
+        {
+            if (locationId == 0)
+            {
+                _logger.LogError(common.NullDeviceType);
+                return BadRequest(common.InvalidId);
+            }
+
+            try
+            {
+                _logger.LogInformation($"CheckDeviceTypeIsUsedAsync for device type id : {locationId}");
+                await _locationService.CheckLocationIsUsedAsync(locationId);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest(ex);
+            }
+        }
+
     }
 }
