@@ -1,4 +1,4 @@
-﻿namespace BusinessLogicLayer.Exceptions
+﻿namespace BusinessLogicLayer.Exceptions 
 {
     public class DeviceNotUniqueByNamePerLocationException : Exception
     {

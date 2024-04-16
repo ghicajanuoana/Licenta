@@ -11,7 +11,7 @@ namespace WebApi.UnitTests
     [TestClass]
     public class DeleteDeviceTypeAsyncTests
     {
-        private static Mock<ILogger<DeviceTypesController>> mock = new Mock<ILogger<DeviceTypesController>>();
+        private static Mock<ILogger<DeviceTypesController>> mock = new Mock<ILogger<DeviceTypesController>>(); 
         private static ILogger<DeviceTypesController> logger = mock.Object;
 
         [TestMethod]

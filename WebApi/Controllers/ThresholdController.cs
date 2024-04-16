@@ -9,7 +9,7 @@ namespace WebApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ThresholdController : ControllerBase
+    public class ThresholdController : ControllerBase 
     {
         private readonly IThresholdService _thresholdService;
         private readonly ILogger<ThresholdController> _logger;

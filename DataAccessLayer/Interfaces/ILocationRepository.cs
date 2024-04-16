@@ -1,6 +1,6 @@
 ﻿using Common;
 using DataAccessLayer.Models;
-using static DataAccessLayer.Implementation.LocationRepository;
+using static DataAccessLayer.Implementation.LocationRepository; 
 
 namespace DataAccessLayer.Interfaces
 {

@@ -2,6 +2,6 @@ namespace WebApi.Configuration
 {
     public class CorsSettings
     {
-        public string WebPortalUrl { get; set; }
+        public string WebPortalUrl { get; set; } 
     }
 }

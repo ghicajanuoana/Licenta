@@ -1,4 +1,4 @@
-﻿namespace BusinessLogicLayer.Enums
+﻿namespace BusinessLogicLayer.Enums 
 {
     public enum ValidationResult
     {

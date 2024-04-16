@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 namespace WebApi.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/[controller]")] 
     public class DeviceReadingTypeController : ControllerBase
     {
         private readonly IDeviceReadingTypeService _deviceReadingTypeService;

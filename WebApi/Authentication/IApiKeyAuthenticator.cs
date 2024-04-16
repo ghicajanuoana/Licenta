@@ -2,6 +2,6 @@
 {
     public interface IApiKeyAuthenticator
     {
-        bool IsAuthenticated();
+        bool IsAuthenticated(); 
     }
 }

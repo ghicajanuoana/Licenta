@@ -5,7 +5,7 @@ namespace WebApi.Authentication
     public class ApiKeyAuthenticator : IApiKeyAuthenticator
     {
         public const string AuthHeaderName = "X-AUTH-APIKEY";
-        public const string AuthApiKey = "851B92AC-E52A-42FE-B2E8-2BAEE3B9F369";
+        public const string AuthApiKey = "851B92AC-E52A-42FE-B2E8-2BAEE3B9F369"; 
 
         private readonly IHttpContextAccessor httpContextAccessor;
 
