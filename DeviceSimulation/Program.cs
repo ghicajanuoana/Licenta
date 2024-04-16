@@ -10,7 +10,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        var constants= new Constants();
+        var constants= new Constants(); 
         var connectionToReadingValues = ConfigurationManager.GetSection("ReadingTypes") as NameValueCollection;
         var connectionToValueRange = ConfigurationManager.GetSection("ValuesRange") as NameValueCollection;
         int seconds = Convert.ToInt32(ConfigurationManager.AppSettings[constants.secondsKey]);
