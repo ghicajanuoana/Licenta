@@ -8,7 +8,7 @@ namespace DataAccessLayer.FilterModels
         public string? Device { get; set; }
         public string? Description { get; set; }
         public string? Outcome { get; set; }
-        public Status? Status { get; set; }
+        public Status? Status { get; set; } 
         public DateTime? ScheduledDateStart { get; set; }
         public DateTime? ScheduledDateEnd { get; set; }
         public DateTime? ActualDateStart { get; set; }
