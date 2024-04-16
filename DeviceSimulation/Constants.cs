@@ -5,7 +5,7 @@ namespace DeviceSimulation
 {
     public class Constants
     {
-        public string secondsKey = "SECONDS";
+        public string secondsKey = "SECONDS"; 
 
         public string deviceIdKey = "DEVICE_ID";
 
