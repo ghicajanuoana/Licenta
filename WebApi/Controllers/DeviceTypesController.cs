@@ -9,7 +9,7 @@ namespace WebApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class DeviceTypesController : ControllerBase
+    public class DeviceTypesController : ControllerBase 
     {
         private readonly IDeviceTypeService _deviceTypeService;
         private readonly ILogger<DeviceTypesController> _logger;
