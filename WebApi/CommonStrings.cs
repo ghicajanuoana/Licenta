@@ -3,7 +3,7 @@
     public class CommonStrings
     {
         //null
-        public string NullDeviceParameters = "Device parameters should not be null !";
+        public string NullDeviceParameters = "Device parameters should not be null !"; 
         public string NullLocationParameters = "Location parameters should not be null !";
         public string NullDevice = "Null device. Please provide a valid device !";
         public string NullMaintenance = "Null maintenance. Please provide a valid maintenance !";
