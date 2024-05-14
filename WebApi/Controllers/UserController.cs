@@ -23,15 +23,15 @@ namespace WebApi.Controllers
     {
         private readonly IUserService _userService;
         private readonly ILogger<UserController> _logger;
-        private readonly DataContext _internshipContext;
+        private readonly DataContext _dataContext;
 
         CommonStrings common = new CommonStrings();
 
-        public UserController(IUserService userService, ILogger<UserController> logger, DataContext internshipContext)
+        public UserController(IUserService userService, ILogger<UserController> logger, DataContext dataContext)
         {
             _userService = userService;
             _logger = logger;
-            _internshipContext = internshipContext;
+            _dataContext = dataContext;
         }
 
         [HttpPost("authenticate")]
@@ -40,7 +40,7 @@ namespace WebApi.Controllers
             if (userObj == null)
                 return BadRequest();
 
-            var user = await _internshipContext.Users
+            var user = await _dataContext.Users
                 .FirstOrDefaultAsync(x => x.Username == userObj.Username);
 
             if (user == null)
@@ -58,7 +58,7 @@ namespace WebApi.Controllers
             var newRefreshToken = CreateRefreshToken();
             user.RefreshToken = newRefreshToken;
             user.RefreshTokenExpiryTime = DateTime.Now.AddDays(5);
-            await _internshipContext.SaveChangesAsync();
+            await _dataContext.SaveChangesAsync();
 
             
             return Ok(new TokenApiDto()
@@ -85,10 +85,10 @@ namespace WebApi.Controllers
         private string CreateJwt(User user)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes("veryverysceret.....");
+            var key = Encoding.ASCII.GetBytes("secretkey");
             var identity = new ClaimsIdentity(new Claim[]
             {
-                //new Claim(ClaimTypes.Role, user.Role),   ????
+                //new Claim(ClaimTypes.Role, user.Role), 
                 new Claim(ClaimTypes.Name,$"{user.Username}")
             });
 
@@ -109,7 +109,7 @@ namespace WebApi.Controllers
             var tokenBytes = RandomNumberGenerator.GetBytes(64);
             var refreshToken = Convert.ToBase64String(tokenBytes);
 
-            var tokenInUser = _internshipContext.Users
+            var tokenInUser = _dataContext.Users
                 .Any(a => a.RefreshToken == refreshToken);
             if (tokenInUser)
             {
@@ -120,7 +120,7 @@ namespace WebApi.Controllers
 
         private ClaimsPrincipal GetPrincipleFromExpiredToken(string token)
         {
-            var key = Encoding.ASCII.GetBytes("secret");
+            var key = Encoding.ASCII.GetBytes("secretkey");
             var tokenValidationParameters = new TokenValidationParameters
             {
                 ValidateAudience = false,
@@ -148,13 +148,13 @@ namespace WebApi.Controllers
             string refreshToken = tokenApiDto.RefreshToken;
             var principal = GetPrincipleFromExpiredToken(accessToken);
             var username = principal.Identity.Name;
-            var user = await _internshipContext.Users.FirstOrDefaultAsync(u => u.Username == username);
+            var user = await _dataContext.Users.FirstOrDefaultAsync(u => u.Username == username);
             if (user is null || user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.Now)
                 return BadRequest("Invalid Request");
             var newAccessToken = CreateJwt(user);
             var newRefreshToken = CreateRefreshToken();
             user.RefreshToken = newRefreshToken;
-            await _internshipContext.SaveChangesAsync();
+            await _dataContext.SaveChangesAsync();
             return Ok(new TokenApiDto()
             {
                 AccessToken = newAccessToken,
