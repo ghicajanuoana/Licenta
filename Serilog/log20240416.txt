@@ -1,0 +1,516 @@
+2024-04-16 18:23:46.742 +03:00 [INF] Application starting up
+2024-04-16 18:23:50.147 +03:00 [DBG] Hosting starting
+2024-04-16 18:23:51.705 +03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-04-16 18:23:54.091 +03:00 [DBG] The index {'DeviceTypeId'} was not created on entity type 'Threshold' as the properties are already covered by the index {'DeviceTypeId', 'DeviceReadingTypeId'}.
+2024-04-16 18:23:54.566 +03:00 [WRN] No store type was specified for the decimal property 'CriticalValue' on entity type 'Threshold'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-04-16 18:23:54.567 +03:00 [WRN] No store type was specified for the decimal property 'MaxValue' on entity type 'Threshold'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-04-16 18:23:54.567 +03:00 [WRN] No store type was specified for the decimal property 'MinValue' on entity type 'Threshold'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-04-16 18:23:54.567 +03:00 [WRN] No store type was specified for the decimal property 'WarningValue' on entity type 'Threshold'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-04-16 18:23:54.827 +03:00 [DBG] Entity Framework Core 7.0.1 initialized 'DataContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.0' with options: MaxPoolSize=1024 
+2024-04-16 18:23:54.839 +03:00 [DBG] Creating DbConnection.
+2024-04-16 18:23:54.848 +03:00 [DBG] Created DbConnection. (3ms).
+2024-04-16 18:23:54.850 +03:00 [DBG] Migrating using database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:54.861 +03:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:54.953 +03:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:54.966 +03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-04-16 18:23:54.977 +03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (7ms).
+2024-04-16 18:23:54.980 +03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (18ms).
+2024-04-16 18:23:54.993 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-16 18:23:55.036 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-16 18:23:55.040 +03:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:55.054 +03:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (7ms).
+2024-04-16 18:23:55.060 +03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2024-04-16 18:23:55.060 +03:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2024-04-16 18:23:55.060 +03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2024-04-16 18:23:55.061 +03:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:55.062 +03:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:55.063 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-16 18:23:55.103 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-16 18:23:55.104 +03:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:55.105 +03:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (0ms).
+2024-04-16 18:23:55.106 +03:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:55.106 +03:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:55.106 +03:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2024-04-16 18:23:55.106 +03:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-16 18:23:55.106 +03:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2024-04-16 18:23:55.106 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-16 18:23:55.108 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-16 18:23:55.108 +03:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:55.108 +03:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (0ms).
+2024-04-16 18:23:55.108 +03:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2024-04-16 18:23:55.108 +03:00 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2024-04-16 18:23:55.108 +03:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2024-04-16 18:23:55.108 +03:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:55.108 +03:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:55.108 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-16 18:23:55.109 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-16 18:23:55.109 +03:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:55.109 +03:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (0ms).
+2024-04-16 18:23:55.136 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-04-16 18:23:55.136 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2024-04-16 18:23:55.136 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2024-04-16 18:23:55.136 +03:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:55.136 +03:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:55.137 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-16 18:23:55.141 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-16 18:23:55.146 +03:00 [DBG] Closing data reader to 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:55.149 +03:00 [DBG] A data reader for 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' is being disposed after spending 5ms reading results.
+2024-04-16 18:23:55.149 +03:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:23:55.149 +03:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (0ms).
+2024-04-16 18:23:55.233 +03:00 [INF] No migrations were applied. The database is already up to date.
+2024-04-16 18:23:55.558 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2024-04-16 18:23:55.905 +03:00 [DBG] Registered SignalR Protocol: json, implemented by Microsoft.AspNetCore.SignalR.Protocol.JsonHubProtocol.
+2024-04-16 18:23:56.303 +03:00 [DBG] Using development certificate: CN=localhost (Thumbprint: D16007BA10D3DBA5AC0E4CA6B488B39A4FC3539A)
+2024-04-16 18:23:56.359 +03:00 [INF] Now listening on: https://localhost:7137
+2024-04-16 18:23:56.359 +03:00 [INF] Now listening on: http://localhost:5275
+2024-04-16 18:23:56.359 +03:00 [DBG] Loaded hosting startup assembly WebApi
+2024-04-16 18:23:56.359 +03:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2024-04-16 18:23:56.359 +03:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2024-04-16 18:23:56.362 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-16 18:23:56.363 +03:00 [INF] Hosting environment: Development
+2024-04-16 18:23:56.363 +03:00 [INF] Content root path: C:\Users\ghica\Desktop\Backend\Aplicatie\WebApi
+2024-04-16 18:23:56.363 +03:00 [DBG] Hosting started
+2024-04-16 18:23:56.540 +03:00 [DBG] Connection id "0HN2U54TOKTNL" accepted.
+2024-04-16 18:23:56.541 +03:00 [DBG] Connection id "0HN2U54TOKTNL" started.
+2024-04-16 18:23:56.570 +03:00 [DBG] Connection id "0HN2U54TOKTNM" accepted.
+2024-04-16 18:23:56.571 +03:00 [DBG] Connection id "0HN2U54TOKTNM" started.
+2024-04-16 18:23:56.754 +03:00 [DBG] Connection id "0HN2U54TOKTNN" accepted.
+2024-04-16 18:23:56.754 +03:00 [DBG] Connection id "0HN2U54TOKTNN" started.
+2024-04-16 18:23:56.821 +03:00 [DBG] Connection 0HN2U54TOKTNN established using the following protocol: "Tls13"
+2024-04-16 18:23:56.913 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/index.html - -
+2024-04-16 18:23:57.093 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2024-04-16 18:23:57.310 +03:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2024-04-16 18:23:57.313 +03:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2024-04-16 18:23:57.335 +03:00 [DBG] Response markup was updated to include Browser Link script injection.
+2024-04-16 18:23:57.336 +03:00 [DBG] Response markup was updated to include browser refresh script injection.
+2024-04-16 18:23:57.345 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/index.html - - - 200 - text/html;charset=utf-8 434.7768ms
+2024-04-16 18:23:57.347 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/_framework/aspnetcore-browser-refresh.js - -
+2024-04-16 18:23:57.353 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/_framework/aspnetcore-browser-refresh.js - - - 200 13748 application/javascript;+charset=utf-8 5.8926ms
+2024-04-16 18:23:57.359 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/_vs/browserLink - -
+2024-04-16 18:23:57.445 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 85.1919ms
+2024-04-16 18:23:57.561 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/swagger/v1/swagger.json - -
+2024-04-16 18:23:57.761 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 200.1543ms
+2024-04-16 18:24:06.558 +03:00 [DBG] Authentication of the HTTPS connection timed out.
+2024-04-16 18:24:06.565 +03:00 [DBG] Connection id "0HN2U54TOKTNL" stopped.
+2024-04-16 18:24:06.566 +03:00 [DBG] Connection id "0HN2U54TOKTNL" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-04-16 18:24:06.584 +03:00 [DBG] Authentication of the HTTPS connection timed out.
+2024-04-16 18:24:06.585 +03:00 [DBG] Connection id "0HN2U54TOKTNM" stopped.
+2024-04-16 18:24:06.585 +03:00 [DBG] Connection id "0HN2U54TOKTNM" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-04-16 18:24:39.146 +03:00 [DBG] Connection id "0HN2U54TOKTNO" accepted.
+2024-04-16 18:24:39.146 +03:00 [DBG] Connection id "0HN2U54TOKTNO" started.
+2024-04-16 18:24:39.156 +03:00 [DBG] Connection 0HN2U54TOKTNO established using the following protocol: "Tls13"
+2024-04-16 18:24:39.159 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7137/api/User/authenticate - -
+2024-04-16 18:24:39.162 +03:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2024-04-16 18:24:39.162 +03:00 [INF] CORS policy execution successful.
+2024-04-16 18:24:39.163 +03:00 [DBG] The request is a preflight request.
+2024-04-16 18:24:39.164 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7137/api/User/authenticate - - - 204 - - 5.9204ms
+2024-04-16 18:24:39.166 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7137/api/User/authenticate application/json 31
+2024-04-16 18:24:39.166 +03:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2024-04-16 18:24:39.166 +03:00 [INF] CORS policy execution successful.
+2024-04-16 18:24:39.169 +03:00 [DBG] POST requests are not supported
+2024-04-16 18:24:39.170 +03:00 [DBG] POST requests are not supported
+2024-04-16 18:24:39.211 +03:00 [DBG] 1 candidate(s) found for the request path '/api/User/authenticate'
+2024-04-16 18:24:39.212 +03:00 [DBG] Endpoint 'WebApi.Controllers.UserController.Authenticate (WebApi)' with route pattern 'api/User/authenticate' is valid for the request path '/api/User/authenticate'
+2024-04-16 18:24:39.212 +03:00 [DBG] Request matched endpoint 'WebApi.Controllers.UserController.Authenticate (WebApi)'
+2024-04-16 18:24:39.212 +03:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.Authenticate (WebApi)'
+2024-04-16 18:24:39.239 +03:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(DataAccessLayer.Models.User) on controller WebApi.Controllers.UserController (WebApi).
+2024-04-16 18:24:39.239 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2024-04-16 18:24:39.239 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2024-04-16 18:24:39.239 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2024-04-16 18:24:39.240 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2024-04-16 18:24:39.240 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2024-04-16 18:24:39.240 +03:00 [DBG] Executing controller factory for controller WebApi.Controllers.UserController (WebApi)
+2024-04-16 18:24:39.241 +03:00 [DBG] Executed controller factory for controller WebApi.Controllers.UserController (WebApi)
+2024-04-16 18:24:39.289 +03:00 [DBG] Attempting to bind parameter 'userObj' of type 'DataAccessLayer.Models.User' ...
+2024-04-16 18:24:39.292 +03:00 [DBG] Attempting to bind parameter 'userObj' of type 'DataAccessLayer.Models.User' using the name '' in request data ...
+2024-04-16 18:24:39.292 +03:00 [DBG] Rejected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonPatchInputFormatter' for content type 'application/json'.
+2024-04-16 18:24:39.293 +03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonInputFormatter' for content type 'application/json'.
+2024-04-16 18:24:39.343 +03:00 [DBG] Connection id "0HN2U54TOKTNO", Request id "0HN2U54TOKTNO:00000003": started reading request body.
+2024-04-16 18:24:39.343 +03:00 [DBG] Connection id "0HN2U54TOKTNO", Request id "0HN2U54TOKTNO:00000003": done reading request body.
+2024-04-16 18:24:39.474 +03:00 [DBG] Done attempting to bind parameter 'userObj' of type 'DataAccessLayer.Models.User'.
+2024-04-16 18:24:39.474 +03:00 [DBG] Done attempting to bind parameter 'userObj' of type 'DataAccessLayer.Models.User'.
+2024-04-16 18:24:39.474 +03:00 [DBG] Attempting to validate the bound parameter 'userObj' of type 'DataAccessLayer.Models.User' ...
+2024-04-16 18:24:39.482 +03:00 [DBG] Done attempting to validate the bound parameter 'userObj' of type 'DataAccessLayer.Models.User'.
+2024-04-16 18:24:39.595 +03:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .FirstOrDefault(x => x.Username == __userObj_Username_0)'
+2024-04-16 18:24:39.907 +03:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: new SingleQueryingEnumerable<User>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.Email (string), 1], [Property: User.FirstName (string), 2], [Property: User.IsActive (bool?) ValueGenerated.OnAdd, 3], [Property: User.LastName (string), 4], [Property: User.Password (string), 5], [Property: User.RefreshToken (string), 6], [Property: User.RefreshTokenExpiryTime (DateTime) Required, 7], [Property: User.RoleId (int?) FK Index, 8], [Property: User.Token (string), 9], [Property: User.Username (string) Index, 10] }
+            SELECT TOP(1) u.Id, u.Email, u.FirstName, u.IsActive, u.LastName, u.Password, u.RefreshToken, u.RefreshTokenExpiryTime, u.RoleId, u.Token, u.Username
+            FROM Users AS u
+            WHERE u.Username == @__userObj_Username_0), 
+        null, 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+        DataAccessLayer.DataContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-04-16 18:24:39.968 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-04-16 18:24:39.968 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2024-04-16 18:24:39.972 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (4ms).
+2024-04-16 18:24:39.979 +03:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:39.980 +03:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:39.986 +03:00 [DBG] Executing DbCommand [Parameters=[@__userObj_Username_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[RoleId], [u].[Token], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__userObj_Username_0
+2024-04-16 18:24:40.043 +03:00 [INF] Executed DbCommand (63ms) [Parameters=[@__userObj_Username_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[RoleId], [u].[Token], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__userObj_Username_0
+2024-04-16 18:24:40.081 +03:00 [DBG] Context 'DataContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-04-16 18:24:40.124 +03:00 [DBG] Closing data reader to 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:40.125 +03:00 [DBG] A data reader for 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' is being disposed after spending 81ms reading results.
+2024-04-16 18:24:40.130 +03:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:40.131 +03:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (1ms).
+2024-04-16 18:24:40.288 +03:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Any(a => a.RefreshToken == __refreshToken_0)'
+2024-04-16 18:24:40.293 +03:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<bool>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM Users AS u
+            WHERE u.RefreshToken == @__refreshToken_0)), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+    DataAccessLayer.DataContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()'
+2024-04-16 18:24:40.302 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-04-16 18:24:40.302 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2024-04-16 18:24:40.302 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2024-04-16 18:24:40.302 +03:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:40.303 +03:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:40.303 +03:00 [DBG] Executing DbCommand [Parameters=[@__refreshToken_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[RefreshToken] = @__refreshToken_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-04-16 18:24:40.304 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__refreshToken_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[RefreshToken] = @__refreshToken_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-04-16 18:24:40.305 +03:00 [DBG] Closing data reader to 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:40.305 +03:00 [DBG] A data reader for 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' is being disposed after spending 0ms reading results.
+2024-04-16 18:24:40.305 +03:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:40.305 +03:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (0ms).
+2024-04-16 18:24:40.311 +03:00 [DBG] SaveChanges starting for 'DataContext'.
+2024-04-16 18:24:40.314 +03:00 [DBG] DetectChanges starting for 'DataContext'.
+2024-04-16 18:24:40.331 +03:00 [DBG] The unchanged property 'User.RefreshToken' was detected as changed and will be marked as modified. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2024-04-16 18:24:40.340 +03:00 [DBG] An entity of type 'User' tracked by 'DataContext' changed state from '"Unchanged"' to '"Modified"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-04-16 18:24:40.342 +03:00 [DBG] The unchanged property 'User.RefreshTokenExpiryTime' was detected as changed and will be marked as modified. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2024-04-16 18:24:40.346 +03:00 [DBG] The unchanged property 'User.Token' was detected as changed and will be marked as modified. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2024-04-16 18:24:40.349 +03:00 [DBG] DetectChanges completed for 'DataContext'.
+2024-04-16 18:24:40.431 +03:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:40.431 +03:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:40.436 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-04-16 18:24:40.437 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2024-04-16 18:24:40.437 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2024-04-16 18:24:40.438 +03:00 [DBG] Executing DbCommand [Parameters=[@p3='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0, [RefreshTokenExpiryTime] = @p1, [Token] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;
+2024-04-16 18:24:40.442 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0, [RefreshTokenExpiryTime] = @p1, [Token] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;
+2024-04-16 18:24:40.454 +03:00 [DBG] Closing data reader to 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:40.454 +03:00 [DBG] A data reader for 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' is being disposed after spending 11ms reading results.
+2024-04-16 18:24:40.455 +03:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:40.455 +03:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (0ms).
+2024-04-16 18:24:40.464 +03:00 [DBG] An entity of type 'User' tracked by 'DataContext' changed state from '"Modified"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-04-16 18:24:40.468 +03:00 [DBG] SaveChanges completed for 'DataContext' with 1 entities written to the database.
+2024-04-16 18:24:40.473 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2024-04-16 18:24:40.475 +03:00 [DBG] No information found on request to perform content negotiation.
+2024-04-16 18:24:40.475 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2024-04-16 18:24:40.475 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2024-04-16 18:24:40.476 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2024-04-16 18:24:40.476 +03:00 [INF] Executing OkObjectResult, writing value of type 'BusinessLogicLayer.DTOs.TokenApiDto'.
+2024-04-16 18:24:40.520 +03:00 [INF] Executed action WebApi.Controllers.UserController.Authenticate (WebApi) in 1276.1743ms
+2024-04-16 18:24:40.521 +03:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.Authenticate (WebApi)'
+2024-04-16 18:24:40.524 +03:00 [INF] HTTP POST /api/User/authenticate responded 200 in 1349.1033 ms
+2024-04-16 18:24:40.538 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7137/api/User/authenticate application/json 31 - 200 299 application/json;+charset=utf-8 1372.1969ms
+2024-04-16 18:24:45.806 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7137/api/Threshold/getAllThresholds - -
+2024-04-16 18:24:45.806 +03:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2024-04-16 18:24:45.806 +03:00 [INF] CORS policy execution successful.
+2024-04-16 18:24:45.807 +03:00 [DBG] The request is a preflight request.
+2024-04-16 18:24:45.807 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7137/api/Threshold/getAllThresholds - - - 204 - - 0.7767ms
+2024-04-16 18:24:45.808 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/api/Threshold/getAllThresholds application/json -
+2024-04-16 18:24:45.808 +03:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2024-04-16 18:24:45.808 +03:00 [INF] CORS policy execution successful.
+2024-04-16 18:24:45.809 +03:00 [DBG] The request path  does not match the path filter
+2024-04-16 18:24:45.809 +03:00 [DBG] The request path /api/Threshold/getAllThresholds does not match a supported file type
+2024-04-16 18:24:45.811 +03:00 [DBG] 2 candidate(s) found for the request path '/api/Threshold/getAllThresholds'
+2024-04-16 18:24:45.811 +03:00 [DBG] Endpoint 'WebApi.Controllers.ThresholdController.GetAllThresholdsAsync (WebApi)' with route pattern 'api/Threshold/getAllThresholds' is valid for the request path '/api/Threshold/getAllThresholds'
+2024-04-16 18:24:45.811 +03:00 [DBG] Endpoint 'WebApi.Controllers.ThresholdController.GetThresholdByIdAsync (WebApi)' with route pattern 'api/Threshold/{thresholdId}' is valid for the request path '/api/Threshold/getAllThresholds'
+2024-04-16 18:24:45.811 +03:00 [DBG] Request matched endpoint 'WebApi.Controllers.ThresholdController.GetAllThresholdsAsync (WebApi)'
+2024-04-16 18:24:45.811 +03:00 [INF] Executing endpoint 'WebApi.Controllers.ThresholdController.GetAllThresholdsAsync (WebApi)'
+2024-04-16 18:24:45.814 +03:00 [INF] Route matched with {action = "GetAllThresholds", controller = "Threshold"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllThresholdsAsync() on controller WebApi.Controllers.ThresholdController (WebApi).
+2024-04-16 18:24:45.814 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2024-04-16 18:24:45.814 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2024-04-16 18:24:45.814 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2024-04-16 18:24:45.814 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2024-04-16 18:24:45.814 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2024-04-16 18:24:45.814 +03:00 [DBG] Executing controller factory for controller WebApi.Controllers.ThresholdController (WebApi)
+2024-04-16 18:24:45.817 +03:00 [DBG] Executed controller factory for controller WebApi.Controllers.ThresholdController (WebApi)
+2024-04-16 18:24:45.818 +03:00 [INF] GetAllThresholdsAsync
+2024-04-16 18:24:45.829 +03:00 [DBG] Compiling query expression: 
+'DbSet<Threshold>()
+    .Include(d => d.DeviceType)
+    .Include(d => d.DeviceReadingType)
+    .OrderBy(d => d.DeviceType.Name)'
+2024-04-16 18:24:45.857 +03:00 [DBG] Including navigation: 'Threshold.DeviceType'.
+2024-04-16 18:24:45.857 +03:00 [DBG] Including navigation: 'Threshold.DeviceReadingType'.
+2024-04-16 18:24:45.925 +03:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Threshold>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: Threshold.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Threshold.CriticalValue (decimal) Required, 1], [Property: Threshold.DeviceReadingTypeId (int) Required FK Index, 2], [Property: Threshold.DeviceTypeId (int) Required FK Index, 3], [Property: Threshold.MaxValue (decimal) Required, 4], [Property: Threshold.MinValue (decimal) Required, 5], [Property: Threshold.WarningValue (decimal) Required, 6] }
+            1 -> Dictionary<IProperty, int> { [Property: DeviceType.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 7], [Property: DeviceType.Name (string) Required, 8] }
+            2 -> Dictionary<IProperty, int> { [Property: DeviceReadingType.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 9], [Property: DeviceReadingType.Name (string) Required Index, 10] }
+        SELECT t.Id, t.CriticalValue, t.DeviceReadingTypeId, t.DeviceTypeId, t.MaxValue, t.MinValue, t.WarningValue, d.Id, d.Name, d0.Id, d0.Name
+        FROM Thresholds AS t
+        INNER JOIN DeviceTypes AS d ON t.DeviceTypeId == d.Id
+        INNER JOIN DeviceReadingTypes AS d0 ON t.DeviceReadingTypeId == d0.Id
+        ORDER BY d.Name ASC), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Threshold>, 
+    DataAccessLayer.DataContext, 
+    False, 
+    False, 
+    True
+)'
+2024-04-16 18:24:45.927 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-04-16 18:24:45.927 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2024-04-16 18:24:45.927 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2024-04-16 18:24:45.927 +03:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:45.927 +03:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:45.927 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CriticalValue], [t].[DeviceReadingTypeId], [t].[DeviceTypeId], [t].[MaxValue], [t].[MinValue], [t].[WarningValue], [d].[Id], [d].[Name], [d0].[Id], [d0].[Name]
+FROM [Thresholds] AS [t]
+INNER JOIN [DeviceTypes] AS [d] ON [t].[DeviceTypeId] = [d].[Id]
+INNER JOIN [DeviceReadingTypes] AS [d0] ON [t].[DeviceReadingTypeId] = [d0].[Id]
+ORDER BY [d].[Name]
+2024-04-16 18:24:45.931 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CriticalValue], [t].[DeviceReadingTypeId], [t].[DeviceTypeId], [t].[MaxValue], [t].[MinValue], [t].[WarningValue], [d].[Id], [d].[Name], [d0].[Id], [d0].[Name]
+FROM [Thresholds] AS [t]
+INNER JOIN [DeviceTypes] AS [d] ON [t].[DeviceTypeId] = [d].[Id]
+INNER JOIN [DeviceReadingTypes] AS [d0] ON [t].[DeviceReadingTypeId] = [d0].[Id]
+ORDER BY [d].[Name]
+2024-04-16 18:24:45.936 +03:00 [DBG] Context 'DataContext' started tracking 'Threshold' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-04-16 18:24:45.960 +03:00 [DBG] The navigation 'Threshold.DeviceType' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-04-16 18:24:45.966 +03:00 [DBG] Context 'DataContext' started tracking 'DeviceType' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-04-16 18:24:45.970 +03:00 [DBG] The navigation 'Threshold.DeviceReadingType' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-04-16 18:24:45.971 +03:00 [DBG] Context 'DataContext' started tracking 'DeviceReadingType' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-04-16 18:24:45.974 +03:00 [DBG] Closing data reader to 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:45.974 +03:00 [DBG] A data reader for 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' is being disposed after spending 42ms reading results.
+2024-04-16 18:24:45.974 +03:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:45.974 +03:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (0ms).
+2024-04-16 18:24:45.976 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2024-04-16 18:24:45.976 +03:00 [DBG] No information found on request to perform content negotiation.
+2024-04-16 18:24:45.976 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2024-04-16 18:24:45.976 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2024-04-16 18:24:45.976 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2024-04-16 18:24:45.976 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BusinessLogicLayer.DTOs.ThresholdDto, BusinessLogicLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-16 18:24:45.989 +03:00 [INF] Executed action WebApi.Controllers.ThresholdController.GetAllThresholdsAsync (WebApi) in 174.7029ms
+2024-04-16 18:24:45.989 +03:00 [INF] Executed endpoint 'WebApi.Controllers.ThresholdController.GetAllThresholdsAsync (WebApi)'
+2024-04-16 18:24:45.989 +03:00 [INF] HTTP GET /api/Threshold/getAllThresholds responded 200 in 180.3908 ms
+2024-04-16 18:24:45.989 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/api/Threshold/getAllThresholds application/json - - 200 241 application/json;+charset=utf-8 181.1187ms
+2024-04-16 18:24:48.014 +03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7137/api/location/getLocationsPagedAndFiltered?pagingFilteringParameters.pageNumber=0&pagingFilteringParameters.pageSize=5&name=&country=&city=&address=&contactEmail=&pagingFilteringParameters.orderBy=Name&pagingFilteringParameters.orderDescending=false - -
+2024-04-16 18:24:48.014 +03:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2024-04-16 18:24:48.014 +03:00 [INF] CORS policy execution successful.
+2024-04-16 18:24:48.014 +03:00 [DBG] The request is a preflight request.
+2024-04-16 18:24:48.014 +03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7137/api/location/getLocationsPagedAndFiltered?pagingFilteringParameters.pageNumber=0&pagingFilteringParameters.pageSize=5&name=&country=&city=&address=&contactEmail=&pagingFilteringParameters.orderBy=Name&pagingFilteringParameters.orderDescending=false - - - 204 - - 0.4269ms
+2024-04-16 18:24:48.016 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7137/api/location/getLocationsPagedAndFiltered?pagingFilteringParameters.pageNumber=0&pagingFilteringParameters.pageSize=5&name=&country=&city=&address=&contactEmail=&pagingFilteringParameters.orderBy=Name&pagingFilteringParameters.orderDescending=false application/json -
+2024-04-16 18:24:48.016 +03:00 [DBG] The request has an origin header: 'http://localhost:4200'.
+2024-04-16 18:24:48.016 +03:00 [INF] CORS policy execution successful.
+2024-04-16 18:24:48.016 +03:00 [DBG] The request path  does not match the path filter
+2024-04-16 18:24:48.016 +03:00 [DBG] The request path /api/location/getLocationsPagedAndFiltered does not match a supported file type
+2024-04-16 18:24:48.017 +03:00 [DBG] 1 candidate(s) found for the request path '/api/location/getLocationsPagedAndFiltered'
+2024-04-16 18:24:48.017 +03:00 [DBG] Endpoint 'WebApi.Controllers.LocationController.GetLocationsFilteredPagedAsync (WebApi)' with route pattern 'api/Location/getLocationsPagedAndFiltered' is valid for the request path '/api/location/getLocationsPagedAndFiltered'
+2024-04-16 18:24:48.017 +03:00 [DBG] Request matched endpoint 'WebApi.Controllers.LocationController.GetLocationsFilteredPagedAsync (WebApi)'
+2024-04-16 18:24:48.017 +03:00 [INF] Executing endpoint 'WebApi.Controllers.LocationController.GetLocationsFilteredPagedAsync (WebApi)'
+2024-04-16 18:24:48.023 +03:00 [INF] Route matched with {action = "GetLocationsFilteredPaged", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLocationsFilteredPagedAsync(BusinessLogicLayer.DTOs.LocationParameters) on controller WebApi.Controllers.LocationController (WebApi).
+2024-04-16 18:24:48.023 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2024-04-16 18:24:48.023 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2024-04-16 18:24:48.023 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2024-04-16 18:24:48.024 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2024-04-16 18:24:48.024 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2024-04-16 18:24:48.024 +03:00 [DBG] Executing controller factory for controller WebApi.Controllers.LocationController (WebApi)
+2024-04-16 18:24:48.024 +03:00 [DBG] Executed controller factory for controller WebApi.Controllers.LocationController (WebApi)
+2024-04-16 18:24:48.030 +03:00 [DBG] Attempting to bind parameter 'locationParameters' of type 'BusinessLogicLayer.DTOs.LocationParameters' ...
+2024-04-16 18:24:48.031 +03:00 [DBG] Attempting to bind parameter 'locationParameters' of type 'BusinessLogicLayer.DTOs.LocationParameters' using the name '' in request data ...
+2024-04-16 18:24:48.036 +03:00 [DBG] Attempting to bind property 'BusinessLogicLayer.DTOs.LocationParameters.Name' of type 'System.String' using the name 'Name' in request data ...
+2024-04-16 18:24:48.037 +03:00 [DBG] Done attempting to bind property 'BusinessLogicLayer.DTOs.LocationParameters.Name' of type 'System.String'.
+2024-04-16 18:24:48.037 +03:00 [DBG] Attempting to bind property 'BusinessLogicLayer.DTOs.LocationParameters.Country' of type 'System.String' using the name 'Country' in request data ...
+2024-04-16 18:24:48.037 +03:00 [DBG] Done attempting to bind property 'BusinessLogicLayer.DTOs.LocationParameters.Country' of type 'System.String'.
+2024-04-16 18:24:48.037 +03:00 [DBG] Attempting to bind property 'BusinessLogicLayer.DTOs.LocationParameters.City' of type 'System.String' using the name 'City' in request data ...
+2024-04-16 18:24:48.037 +03:00 [DBG] Done attempting to bind property 'BusinessLogicLayer.DTOs.LocationParameters.City' of type 'System.String'.
+2024-04-16 18:24:48.037 +03:00 [DBG] Attempting to bind property 'BusinessLogicLayer.DTOs.LocationParameters.Address' of type 'System.String' using the name 'Address' in request data ...
+2024-04-16 18:24:48.037 +03:00 [DBG] Done attempting to bind property 'BusinessLogicLayer.DTOs.LocationParameters.Address' of type 'System.String'.
+2024-04-16 18:24:48.037 +03:00 [DBG] Attempting to bind property 'BusinessLogicLayer.DTOs.LocationParameters.ContactEmail' of type 'System.String' using the name 'ContactEmail' in request data ...
+2024-04-16 18:24:48.037 +03:00 [DBG] Done attempting to bind property 'BusinessLogicLayer.DTOs.LocationParameters.ContactEmail' of type 'System.String'.
+2024-04-16 18:24:48.038 +03:00 [DBG] Attempting to bind property 'BusinessLogicLayer.DTOs.LocationParameters.PagingFilteringParameters' of type 'Common.PagingFilteringParameters' using the name 'PagingFilteringParameters' in request data ...
+2024-04-16 18:24:48.038 +03:00 [DBG] Attempting to bind property 'Common.PagingFilteringParameters.PageNumber' of type 'System.Int32' using the name 'PagingFilteringParameters.PageNumber' in request data ...
+2024-04-16 18:24:48.038 +03:00 [DBG] Done attempting to bind property 'Common.PagingFilteringParameters.PageNumber' of type 'System.Int32'.
+2024-04-16 18:24:48.039 +03:00 [DBG] Attempting to bind property 'Common.PagingFilteringParameters.OrderBy' of type 'System.String' using the name 'PagingFilteringParameters.OrderBy' in request data ...
+2024-04-16 18:24:48.039 +03:00 [DBG] Done attempting to bind property 'Common.PagingFilteringParameters.OrderBy' of type 'System.String'.
+2024-04-16 18:24:48.039 +03:00 [DBG] Attempting to bind property 'Common.PagingFilteringParameters.OrderDescending' of type 'System.Boolean' using the name 'PagingFilteringParameters.OrderDescending' in request data ...
+2024-04-16 18:24:48.039 +03:00 [DBG] Done attempting to bind property 'Common.PagingFilteringParameters.OrderDescending' of type 'System.Boolean'.
+2024-04-16 18:24:48.039 +03:00 [DBG] Attempting to bind property 'Common.PagingFilteringParameters.PageSize' of type 'System.Int32' using the name 'PagingFilteringParameters.PageSize' in request data ...
+2024-04-16 18:24:48.039 +03:00 [DBG] Done attempting to bind property 'Common.PagingFilteringParameters.PageSize' of type 'System.Int32'.
+2024-04-16 18:24:48.039 +03:00 [DBG] Done attempting to bind property 'BusinessLogicLayer.DTOs.LocationParameters.PagingFilteringParameters' of type 'Common.PagingFilteringParameters'.
+2024-04-16 18:24:48.040 +03:00 [DBG] Done attempting to bind parameter 'locationParameters' of type 'BusinessLogicLayer.DTOs.LocationParameters'.
+2024-04-16 18:24:48.040 +03:00 [DBG] Done attempting to bind parameter 'locationParameters' of type 'BusinessLogicLayer.DTOs.LocationParameters'.
+2024-04-16 18:24:48.040 +03:00 [DBG] Attempting to validate the bound parameter 'locationParameters' of type 'BusinessLogicLayer.DTOs.LocationParameters' ...
+2024-04-16 18:24:48.041 +03:00 [DBG] Done attempting to validate the bound parameter 'locationParameters' of type 'BusinessLogicLayer.DTOs.LocationParameters'.
+2024-04-16 18:24:48.046 +03:00 [INF] GetLocationsFilteredPaged for {
+  "Name": null,
+  "Country": null,
+  "City": null,
+  "Address": null,
+  "ContactEmail": null,
+  "PagingFilteringParameters": {
+    "PageNumber": 0,
+    "OrderBy": "Name",
+    "OrderDescending": false,
+    "PageSize": 5
+  }
+}
+2024-04-16 18:24:48.055 +03:00 [DBG] Compiling query expression: 
+'DbSet<Location>()
+    .Where(l => True)
+    .Where(l => True)
+    .Where(l => True)
+    .Where(l => True)
+    .Where(l => True)
+    .Count()'
+2024-04-16 18:24:48.091 +03:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<int>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT COUNT(*)
+        FROM Locations AS l), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, int>, 
+    DataAccessLayer.DataContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()'
+2024-04-16 18:24:48.096 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-04-16 18:24:48.096 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2024-04-16 18:24:48.096 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2024-04-16 18:24:48.096 +03:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:48.096 +03:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:48.096 +03:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Locations] AS [l]
+2024-04-16 18:24:48.100 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Locations] AS [l]
+2024-04-16 18:24:48.100 +03:00 [DBG] Closing data reader to 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:48.100 +03:00 [DBG] A data reader for 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' is being disposed after spending 0ms reading results.
+2024-04-16 18:24:48.100 +03:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:48.100 +03:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (0ms).
+2024-04-16 18:24:48.103 +03:00 [DBG] Compiling query expression: 
+'DbSet<Location>()
+    .Where(l => True)
+    .Where(l => True)
+    .Where(l => True)
+    .Where(l => True)
+    .Where(l => True)
+    .OrderBy(l => l.Name)
+    .Skip(__p_0)
+    .Take(__p_1)'
+2024-04-16 18:24:48.107 +03:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Location>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Location.LocationId (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Location.Address (string) Required, 1], [Property: Location.City (string) Required, 2], [Property: Location.ContactEmail (string), 3], [Property: Location.Country (string) Required, 4], [Property: Location.EmailAlertsActive (bool) Required, 5], [Property: Location.EmailRecipient (string), 6], [Property: Location.Latitude (double?), 7], [Property: Location.Longitude (double?), 8], [Property: Location.Name (string) Required, 9], [Property: Location.Phone (string), 10] }
+        SELECT l.LocationId, l.Address, l.City, l.ContactEmail, l.Country, l.EmailAlertsActive, l.EmailRecipient, l.Latitude, l.Longitude, l.Name, l.Phone
+        FROM Locations AS l
+        ORDER BY l.Name ASC
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Location>, 
+    DataAccessLayer.DataContext, 
+    False, 
+    False, 
+    True
+)'
+2024-04-16 18:24:48.107 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-04-16 18:24:48.107 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2024-04-16 18:24:48.107 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2024-04-16 18:24:48.107 +03:00 [DBG] Opening connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:48.107 +03:00 [DBG] Opened connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:48.108 +03:00 [DBG] Executing DbCommand [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Address], [l].[City], [l].[ContactEmail], [l].[Country], [l].[EmailAlertsActive], [l].[EmailRecipient], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Phone]
+FROM [Locations] AS [l]
+ORDER BY [l].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-16 18:24:48.109 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[LocationId], [l].[Address], [l].[City], [l].[ContactEmail], [l].[Country], [l].[EmailAlertsActive], [l].[EmailRecipient], [l].[Latitude], [l].[Longitude], [l].[Name], [l].[Phone]
+FROM [Locations] AS [l]
+ORDER BY [l].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-16 18:24:48.115 +03:00 [DBG] Context 'DataContext' started tracking 'Location' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2024-04-16 18:24:48.134 +03:00 [DBG] Closing data reader to 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:48.134 +03:00 [DBG] A data reader for 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' is being disposed after spending 24ms reading results.
+2024-04-16 18:24:48.134 +03:00 [DBG] Closing connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB'.
+2024-04-16 18:24:48.134 +03:00 [DBG] Closed connection to database 'InternshipDB' on server '(LocalDb)\MSSQLLocalDB' (0ms).
+2024-04-16 18:24:48.135 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2024-04-16 18:24:48.135 +03:00 [DBG] No information found on request to perform content negotiation.
+2024-04-16 18:24:48.135 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2024-04-16 18:24:48.135 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2024-04-16 18:24:48.135 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/json' to write the response.
+2024-04-16 18:24:48.135 +03:00 [INF] Executing OkObjectResult, writing value of type 'Common.PagedResponse`1[[BusinessLogicLayer.DTOs.LocationInListDto, BusinessLogicLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-16 18:24:48.144 +03:00 [INF] Executed action WebApi.Controllers.LocationController.GetLocationsFilteredPagedAsync (WebApi) in 120.2077ms
+2024-04-16 18:24:48.144 +03:00 [INF] Executed endpoint 'WebApi.Controllers.LocationController.GetLocationsFilteredPagedAsync (WebApi)'
+2024-04-16 18:24:48.144 +03:00 [INF] HTTP GET /api/location/getLocationsPagedAndFiltered responded 200 in 127.4159 ms
+2024-04-16 18:24:48.144 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7137/api/location/getLocationsPagedAndFiltered?pagingFilteringParameters.pageNumber=0&pagingFilteringParameters.pageSize=5&name=&country=&city=&address=&contactEmail=&pagingFilteringParameters.orderBy=Name&pagingFilteringParameters.orderDescending=false application/json - - 200 268 application/json;+charset=utf-8 127.9863ms

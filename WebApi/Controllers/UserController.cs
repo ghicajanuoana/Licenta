@@ -120,7 +120,7 @@ namespace WebApi.Controllers
 
         private ClaimsPrincipal GetPrincipleFromExpiredToken(string token)
         {
-            var key = Encoding.ASCII.GetBytes("veryverysceret.....");
+            var key = Encoding.ASCII.GetBytes("secret");
             var tokenValidationParameters = new TokenValidationParameters
             {
                 ValidateAudience = false,
